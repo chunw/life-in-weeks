@@ -11,8 +11,5 @@ function getRequiredDate(envVar: string): string {
 
 // Server-side sensitive dates configuration
 export const SERVER_CONFIG = {
-  BIRTH_DATE: getRequiredDate("REAL_BIRTH_DATE"),
-  MET_WIFE_DATE: getRequiredDate("REAL_MET_WIFE_DATE"), 
-  MARRIAGE_DATE: getRequiredDate("REAL_MARRIAGE_DATE"),
-  CITIZENSHIP_DATE: getRequiredDate("REAL_CITIZENSHIP_DATE")
+  BIRTH_DATE: getRequiredDate("REAL_BIRTH_DATE")
 }

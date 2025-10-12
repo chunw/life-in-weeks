@@ -32,10 +32,7 @@ import './weeks.css'
 export default function HomePage() {
   // Load sensitive dates from server-side environment variables
   const sensitiveDates: SensitiveDates = {
-    birthDate: SERVER_CONFIG.BIRTH_DATE,
-    metWifeDate: SERVER_CONFIG.MET_WIFE_DATE,
-    marriageDate: SERVER_CONFIG.MARRIAGE_DATE,
-    citizenshipDate: SERVER_CONFIG.CITIZENSHIP_DATE
+    birthDate: SERVER_CONFIG.BIRTH_DATE
   }
 
   // Create derived configuration from birth date

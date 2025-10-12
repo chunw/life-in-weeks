@@ -5,9 +5,6 @@ import { APP_CONFIG } from '../config/app-config'
 // Sensitive dates interface - these will be provided by server-side configuration
 export interface SensitiveDates {
   birthDate: string
-  metWifeDate: string  
-  marriageDate: string
-  citizenshipDate: string
 }
 
 /**
@@ -79,11 +76,6 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
       description: "Did Physics Olympiad instead of SATs. Went to Nanjing University, but they enrolled me in the wrong major—I stuck with it anyway ¯\\_(ツ)_/¯"
     }
   ],
-    [sensitiveDates.metWifeDate]: [
-      {
-        headline: "💕 Met My Future Wife"
-      }
-    ],
   "2007-10-07": [
     {
       headline: "🎻 Performing in Leipzig",
@@ -102,11 +94,6 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
       description: "CityU in Hong Kong, an eye-opening experience compared to my school (Nanjing University)."
     }
   ],
-    [sensitiveDates.marriageDate]: [
-      {
-        headline: "💍 Married"
-      }
-    ],
   "2009-06-20": [
     {
       headline: "✈️ US Grad School",
@@ -225,12 +212,6 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
       description: "Utah national parks hiking adventure: https://www.dingran.me/blog/utah-trip"
     }
   ],
-    [sensitiveDates.citizenshipDate]: [
-      {
-        headline: "🇺🇸 Became a US citizen",
-        description: "Became a US citizen, mostly for the ability to travel abroad without needing visas."
-      }
-    ],
   "2021-10-01": [
     {
       headline: "🇮🇹 Italy",
