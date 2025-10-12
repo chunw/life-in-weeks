@@ -565,6 +565,8 @@ html, body {
 
 .filter-chip-text {
   display: inline-block;
+  color: inherit !important;
+  background-color: transparent !important;
 }
 
 .category-chip {
