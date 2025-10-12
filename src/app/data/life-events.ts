@@ -66,7 +66,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
       {
         headline: "🎓 Started at Shanghai Foreign Language School",
         milestone: true,
-        description: "Began high school at SFLS",
+        description: "Began middle school at SFLS",
         category: "education"
       }
     ],
@@ -75,7 +75,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         headline: "✈️ Came to US for College",
         milestone: true,
         description: "Started at Cornell University",
-        category: "travel"
+        category: "education"
       }
     ],
     "2018-05-01": [
@@ -95,9 +95,9 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
     "2020-07-01": [
       {
-        headline: "💼 Started at Meta",
+        headline: "💼 Joined Applied Privacy Technology Team",
         milestone: true,
-        description: "Joined Meta full-time as a Software Engineer",
+        description: "Started at Meta full-time as a Software Engineer",
         category: "work"
       }
     ],
