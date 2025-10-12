@@ -1,9 +1,9 @@
 export function Footer() {
   return (
     <footer style={{ textAlign: 'center', padding: '2rem 0', marginTop: '2rem' }}>
-      <a 
-        href="https://github.com/dingran/life-in-weeks-nextjs" 
-        target="_blank" 
+      <a
+        href="https://github.com/yizhouyu/life-in-weeks-nextjs"
+        target="_blank"
         rel="noopener noreferrer"
         style={{ 
           display: 'inline-flex', 
