@@ -68,6 +68,12 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         description: "Joined Meta full-time as a Software Engineer"
       }
     ],
+    "2025-10-11": [
+      {
+        headline: "🤖 Created this page using Claude Code",
+        description: "Built this Life in Weeks visualization with Claude Code: https://claude.com/claude-code"
+      }
+    ],
     ...(APP_CONFIG.showLifeExpectancy ? {
       [derivedConfig.lifeExpectancyDate]: [
         {
