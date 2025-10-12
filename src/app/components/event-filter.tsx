@@ -54,124 +54,105 @@ export function EventFilter({ filters, setFilters }: EventFilterProps) {
   }
 
   return (
-    <div className="event-filter" style={{
-      marginTop: '1rem',
-      marginBottom: '1rem',
-      padding: '1rem',
-      backgroundColor: '#f8f9fa',
-      borderRadius: '8px',
-      border: '1px solid #dee2e6'
-    }}>
-      <div style={{ marginBottom: '0.75rem' }}>
-        <strong>Event Filters:</strong>
-      </div>
+    <div className="event-filter">
+      <div className="filter-section">
+        <div className="filter-label">Event Filters:</div>
 
-      {/* Main event type toggles */}
-      <div style={{ marginBottom: '0.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-        <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
-          <input
-            type="checkbox"
-            checked={filters.showPersonalEvents}
-            onChange={() => toggleMainFilter('showPersonalEvents')}
-            style={{ marginRight: '0.25rem' }}
-          />
-          <span>Personal Events</span>
-        </label>
+        {/* Main event type toggles */}
+        <div className="filter-buttons">
+          <label className={`filter-chip ${filters.showPersonalEvents ? 'active' : ''}`}>
+            <input
+              type="checkbox"
+              checked={filters.showPersonalEvents}
+              onChange={() => toggleMainFilter('showPersonalEvents')}
+              className="filter-checkbox"
+            />
+            <span className="filter-chip-text">Personal Events</span>
+          </label>
 
-        <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
-          <input
-            type="checkbox"
-            checked={filters.showWorldEvents}
-            onChange={() => toggleMainFilter('showWorldEvents')}
-            style={{ marginRight: '0.25rem' }}
-          />
-          <span>World Events</span>
-        </label>
+          <label className={`filter-chip ${filters.showWorldEvents ? 'active' : ''}`}>
+            <input
+              type="checkbox"
+              checked={filters.showWorldEvents}
+              onChange={() => toggleMainFilter('showWorldEvents')}
+              className="filter-checkbox"
+            />
+            <span className="filter-chip-text">World Events</span>
+          </label>
 
-        <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
-          <input
-            type="checkbox"
-            checked={filters.showPresidents}
-            onChange={() => toggleMainFilter('showPresidents')}
-            style={{ marginRight: '0.25rem' }}
-          />
-          <span>US Presidents</span>
-        </label>
+          <label className={`filter-chip ${filters.showPresidents ? 'active' : ''}`}>
+            <input
+              type="checkbox"
+              checked={filters.showPresidents}
+              onChange={() => toggleMainFilter('showPresidents')}
+              className="filter-checkbox"
+            />
+            <span className="filter-chip-text">US Presidents</span>
+          </label>
+        </div>
       </div>
 
       {/* Personal event category filters - only show when personal events are enabled */}
       {filters.showPersonalEvents && (
-        <div style={{
-          marginTop: '0.75rem',
-          paddingTop: '0.75rem',
-          borderTop: '1px solid #dee2e6'
-        }}>
-          <div style={{ marginBottom: '0.5rem', fontSize: '0.9em', color: '#666' }}>
-            <strong>Personal Event Categories:</strong>
+        <div className="filter-section category-section">
+          <div className="category-header">
+            <span className="filter-label">Personal Event Categories:</span>
             <button
               onClick={toggleAllPersonalCategories}
-              style={{
-                marginLeft: '0.5rem',
-                fontSize: '0.85em',
-                padding: '0.1rem 0.4rem',
-                border: '1px solid #ccc',
-                borderRadius: '4px',
-                backgroundColor: '#fff',
-                cursor: 'pointer'
-              }}
+              className="select-all-btn"
             >
               {allPersonalCategoriesEnabled ? 'Deselect All' : 'Select All'}
             </button>
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', fontSize: '0.9em' }}>
-            <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
+          <div className="filter-buttons">
+            <label className={`filter-chip category-chip ${filters.personalCategories.personal ? 'active' : ''}`}>
               <input
                 type="checkbox"
                 checked={filters.personalCategories.personal}
                 onChange={() => toggleCategoryFilter('personal')}
-                style={{ marginRight: '0.25rem' }}
+                className="filter-checkbox"
               />
-              <span>Personal</span>
+              <span className="filter-chip-text">Personal</span>
             </label>
 
-            <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
+            <label className={`filter-chip category-chip ${filters.personalCategories.education ? 'active' : ''}`}>
               <input
                 type="checkbox"
                 checked={filters.personalCategories.education}
                 onChange={() => toggleCategoryFilter('education')}
-                style={{ marginRight: '0.25rem' }}
+                className="filter-checkbox"
               />
-              <span>Education</span>
+              <span className="filter-chip-text">Education</span>
             </label>
 
-            <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
+            <label className={`filter-chip category-chip ${filters.personalCategories.work ? 'active' : ''}`}>
               <input
                 type="checkbox"
                 checked={filters.personalCategories.work}
                 onChange={() => toggleCategoryFilter('work')}
-                style={{ marginRight: '0.25rem' }}
+                className="filter-checkbox"
               />
-              <span>Work</span>
+              <span className="filter-chip-text">Work</span>
             </label>
 
-            <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
+            <label className={`filter-chip category-chip ${filters.personalCategories.travel ? 'active' : ''}`}>
               <input
                 type="checkbox"
                 checked={filters.personalCategories.travel}
                 onChange={() => toggleCategoryFilter('travel')}
-                style={{ marginRight: '0.25rem' }}
+                className="filter-checkbox"
               />
-              <span>Travel</span>
+              <span className="filter-chip-text">Travel</span>
             </label>
 
-            <label style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}>
+            <label className={`filter-chip category-chip ${filters.personalCategories.achievement ? 'active' : ''}`}>
               <input
                 type="checkbox"
                 checked={filters.personalCategories.achievement}
                 onChange={() => toggleCategoryFilter('achievement')}
-                style={{ marginRight: '0.25rem' }}
+                className="filter-checkbox"
               />
-              <span>Achievements</span>
+              <span className="filter-chip-text">Achievements</span>
             </label>
           </div>
         </div>

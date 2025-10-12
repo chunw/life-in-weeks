@@ -448,3 +448,157 @@ html, body {
 .compact-cell.event {
   font-size: 10px !important;
 }
+
+/* ============================================
+   Event Filter Styles
+   ============================================ */
+
+.event-filter {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 135, 168, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-section {
+  margin-bottom: 0.75rem;
+}
+
+.filter-section:last-child {
+  margin-bottom: 0;
+}
+
+.category-section {
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(99, 135, 168, 0.15);
+}
+
+.filter-label {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 0.95em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.select-all-btn {
+  font-size: 0.8em;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid rgba(99, 135, 168, 0.3);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-family);
+  font-weight: 500;
+}
+
+.select-all-btn:hover {
+  background-color: rgba(99, 135, 168, 0.1);
+  border-color: rgba(99, 135, 168, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.select-all-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.9rem;
+  border: 1.5px solid rgba(99, 135, 168, 0.3);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--text-color);
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.filter-chip:hover {
+  background-color: rgba(99, 135, 168, 0.08);
+  border-color: rgba(99, 135, 168, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-chip.active {
+  background-color: var(--text-color);
+  color: white;
+  border-color: var(--text-color);
+  box-shadow: 0 2px 8px rgba(63, 92, 114, 0.3);
+}
+
+.filter-chip.active:hover {
+  background-color: #325066;
+  border-color: #325066;
+}
+
+.filter-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter-chip-text {
+  display: inline-block;
+}
+
+.category-chip {
+  font-size: 0.85em;
+  padding: 0.35rem 0.8rem;
+}
+
+/* Mobile responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .event-filter {
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+  }
+
+  .filter-label {
+    font-size: 0.9em;
+  }
+
+  .filter-chip {
+    font-size: 0.85em;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .category-chip {
+    font-size: 0.8em;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .select-all-btn {
+    font-size: 0.75em;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .category-header {
+    font-size: 0.9em;
+  }
+}
