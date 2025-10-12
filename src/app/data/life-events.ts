@@ -48,6 +48,13 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         headline: "🐣 Born in Shanghai"
       }
     ],
+    "2009-09-01": [
+      {
+        headline: "🎓 Started at Shanghai Foreign Language School",
+        milestone: true,
+        description: "Began high school at SFLS"
+      }
+    ],
     "2016-08-01": [
       {
         headline: "✈️ Came to US for College",
@@ -61,11 +68,49 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         description: "Interned at Meta"
       }
     ],
+    "2020-05-01": [
+      {
+        headline: "🎓 Graduated from Cornell University",
+        milestone: true,
+        description: "Bachelor's and Master's degrees"
+      }
+    ],
     "2020-07-01": [
       {
         headline: "💼 Started at Meta",
         milestone: true,
         description: "Joined Meta full-time as a Software Engineer"
+      }
+    ],
+    "2021-05-01": [
+      {
+        headline: "👨‍🏫 Hosted Kensal Ramos",
+        description: "As intern manager at Meta"
+      }
+    ],
+    "2022-05-01": [
+      {
+        headline: "👨‍🏫 Hosted Elizabeth Ke",
+        description: "As intern manager at Meta"
+      }
+    ],
+    "2022-08-01": [
+      {
+        headline: "🔬 Joined Experimentation Platform Team",
+        milestone: true,
+        description: "Switched to the Experimentation Platform team at Meta"
+      }
+    ],
+    "2024-05-01": [
+      {
+        headline: "👨‍🏫 Hosted Yuzhou Jiang",
+        description: "As intern manager at Meta"
+      }
+    ],
+    "2025-05-01": [
+      {
+        headline: "👨‍🏫 Hosted Aiden Mizhen",
+        description: "As intern manager at Meta"
       }
     ],
     "2025-10-11": [
