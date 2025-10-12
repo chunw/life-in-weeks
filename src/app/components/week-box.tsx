@@ -56,9 +56,9 @@ export function WeekBox({ box, className = '', style = {}, isCompactMode = false
       </CustomTooltip>
     )
   } else {
-    // Simple native tooltip for basic events/dates
-    return React.cloneElement(buttonElement, { 
-      title: box.type === 'week' ? '' : box.tooltip 
+    // Simple native tooltip for basic events/dates and empty weeks
+    return React.cloneElement(buttonElement, {
+      title: box.tooltip
     })
   }
 }
