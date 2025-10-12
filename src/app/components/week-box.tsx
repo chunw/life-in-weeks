@@ -29,10 +29,8 @@ export function WeekBox({ box, className = '', style = {}, isCompactMode = false
   const finalClassName = `${fullClassName} ${typeSpecificClasses[box.type]}`.trim()
   
   // Determine if this box has detailed content worth showing in rich tooltip
-  // Rich tooltips for events with descriptions (papers, detailed events)
-  const hasDetails = box.type === 'event' && 
-    box.tooltip.includes('–') && 
-    (box.tooltip.includes('http') || box.tooltip.length > 50)
+  // Rich tooltips for events with descriptions (personal events, papers, detailed events)
+  const hasDetails = box.type === 'event' && box.tooltip.includes('–')
   
   // In compact mode, show custom tooltip for all events to display full name
   const shouldUseCustomTooltip = hasDetails || (isCompactMode && box.type === 'event')
