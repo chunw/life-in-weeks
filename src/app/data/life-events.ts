@@ -66,7 +66,6 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
       {
         headline: "🎓 Started at Shanghai Foreign Language School",
         milestone: true,
-        description: "Middle school",
         category: "education"
       }
     ],
