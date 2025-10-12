@@ -95,9 +95,9 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
     "2020-07-01": [
       {
-        headline: "💼 Joined Applied Privacy Technology Team",
+        headline: "💼 Started at Meta full-time as a Software Engineer",
         milestone: true,
-        description: "Started at Meta full-time as a Software Engineer",
+        description: "Joined Applied Privacy Technology Team",
         category: "work"
       }
     ],
