@@ -14,7 +14,10 @@
       "WebSearch",
       "Bash(npx tsc:*)",
       "Bash(./node_modules/.bin/tsc:*)",
-      "Bash(git revert:*)"
+      "Bash(git revert:*)",
+      "Bash(npm run typecheck)",
+      "Bash(npm install)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }
