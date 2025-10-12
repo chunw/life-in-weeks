@@ -260,9 +260,15 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
         } else {
           // Create tooltip that includes all events in this week
           const allEventDescriptions = eventsForWeek.map(e => {
-            const prefix = e.eventType === 'world' ? '🌍 ' : 
-                          e.eventType === 'president' ? '🇺🇸 ' : ''
-            return prefix + e.headline + (e.description ? ` - ${e.description}` : '')
+            // For personal events, show only description (headline is already in the cell)
+            // For world/president events, show the full headline with prefix
+            if (e.eventType === 'personal') {
+              return e.description || e.headline
+            } else {
+              const prefix = e.eventType === 'world' ? '🌍 ' :
+                            e.eventType === 'president' ? '🇺🇸 ' : ''
+              return prefix + e.headline + (e.description ? ` - ${e.description}` : '')
+            }
           }).join('\n')
           
           const eventLabel = isCompactMode ? createCompactEventLabel(primaryEvent.headline) : primaryEvent.headline
