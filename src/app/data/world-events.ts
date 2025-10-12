@@ -85,11 +85,81 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       category: "technology"
     }
   ],
-  "2011-03-11": [
+  "2009-01-20": [
     {
-      headline: "☢️ Fukushima Nuclear Disaster",
-      description: "Japan earthquake and tsunami - https://en.wikipedia.org/wiki/Fukushima_nuclear_disaster",
+      headline: "🇺🇸 Barack Obama Inaugurated",
+      description: "First Black US President takes office - https://en.wikipedia.org/wiki/Barack_Obama",
+      category: "politics"
+    }
+  ],
+  "2010-04-03": [
+    {
+      headline: "📱 iPad Released",
+      description: "Apple launches tablet revolution - https://en.wikipedia.org/wiki/IPad",
+      category: "technology"
+    }
+  ],
+  "2010-10-06": [
+    {
+      headline: "📸 Instagram Launched",
+      description: "Photo-sharing app goes live - https://en.wikipedia.org/wiki/Instagram",
+      category: "technology"
+    }
+  ],
+  "2010-12-17": [
+    {
+      headline: "🌍 Arab Spring Begins",
+      description: "Democratic uprisings across Middle East and North Africa - https://en.wikipedia.org/wiki/Arab_Spring",
+      category: "politics"
+    }
+  ],
+  "2012-10-29": [
+    {
+      headline: "🌊 Hurricane Sandy",
+      description: "Superstorm hits US East Coast - https://en.wikipedia.org/wiki/Hurricane_Sandy",
       category: "disaster"
+    }
+  ],
+  "2013-06-06": [
+    {
+      headline: "🔓 Snowden Leaks NSA Surveillance",
+      description: "Edward Snowden reveals global surveillance programs - https://en.wikipedia.org/wiki/Edward_Snowden",
+      category: "politics"
+    }
+  ],
+  "2014-02-19": [
+    {
+      headline: "💬 Facebook Acquires WhatsApp",
+      description: "$19 billion acquisition - https://en.wikipedia.org/wiki/WhatsApp",
+      category: "technology"
+    }
+  ],
+  "2015-06-26": [
+    {
+      headline: "🏳️‍🌈 US Legalizes Same-Sex Marriage",
+      description: "Supreme Court ruling nationwide - https://en.wikipedia.org/wiki/Obergefell_v._Hodges",
+      category: "culture"
+    }
+  ],
+  "2016-06-23": [
+    {
+      headline: "🇬🇧 Brexit Vote",
+      description: "UK votes to leave European Union - https://en.wikipedia.org/wiki/Brexit",
+      category: "politics"
+    }
+  ],
+  "2016-11-08": [
+    {
+      headline: "🇺🇸 Donald Trump Elected President",
+      description: "Trump defeats Clinton in US election - https://en.wikipedia.org/wiki/2016_United_States_presidential_election",
+      category: "politics"
+    }
+  ],
+  "2017-10-05": [
+    {
+      headline: "#️⃣ #MeToo Movement Goes Viral",
+      description: "Weinstein allegations spark global movement - https://en.wikipedia.org/wiki/Me_Too_movement",
+      category: "culture"
     }
   ],
   "2020-01-21": [
@@ -99,11 +169,32 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       category: "disaster"
     }
   ],
+  "2020-05-25": [
+    {
+      headline: "✊ George Floyd Killed",
+      description: "Death sparks global Black Lives Matter protests - https://en.wikipedia.org/wiki/George_Floyd",
+      category: "culture"
+    }
+  ],
+  "2021-01-06": [
+    {
+      headline: "🏛️ US Capitol Attack",
+      description: "Riot during 2020 election certification - https://en.wikipedia.org/wiki/January_6_United_States_Capitol_attack",
+      category: "politics"
+    }
+  ],
   "2021-10-28": [
     {
       headline: "🌐 Facebook Renamed to Meta",
       description: "Mark Zuckerberg announces company rebranding to focus on metaverse - https://en.wikipedia.org/wiki/Meta_Platforms",
       category: "technology"
+    }
+  ],
+  "2022-02-24": [
+    {
+      headline: "🇺🇦 Russia Invades Ukraine",
+      description: "Full-scale invasion begins - https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
+      category: "war"
     }
   ],
   "2022-11-30": [
