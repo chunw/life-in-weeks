@@ -14,7 +14,8 @@ export function IntroContent({ isCompactMode, setIsCompactMode }: IntroContentPr
         <p>👋 Hi, I&apos;m <a href="https://yizhouyu.github.io">Yizhou Yu</a>. Each week of my life is a little box.</p>
 
         <p>💡 Inspired by <a href="https://waitbutwhy.com/2014/05/life-weeks.html">Wait But Why</a>. Adapted from <a href="https://github.com/ginatrapani/life-in-weeks">Gina&apos;s work</a>.<br/>
-        💻 Built with <a href="https://rd.me/weeks">Ran Ding&apos;s</a> <a href="https://github.com/dingran/life-in-weeks-nextjs">open-source code</a>. My fork is <a href="https://github.com/yizhouyu/life-in-weeks-nextjs">here</a>.</p>
+        💻 Built with <a href="https://rd.me/weeks">Ran Ding&apos;s</a> <a href="https://github.com/dingran/life-in-weeks-nextjs">open-source code</a>. My fork is <a href="https://github.com/yizhouyu/life-in-weeks-nextjs">here</a>.<br/>
+        🤖 Created this page today using <a href="https://claude.com/claude-code">Claude Code</a>!</p>
 
         <p style={{ fontSize: '0.9em', color: '#666', marginTop: '0.75rem' }}>
           🎨 <strong>Colors:</strong> Background colors change at major life milestones, marking different life phases.<br/>
