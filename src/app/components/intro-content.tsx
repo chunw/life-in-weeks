@@ -11,10 +11,10 @@ export function IntroContent({ isCompactMode, setIsCompactMode }: IntroContentPr
   return (
     <div className="intro-content">
       <div className="mt-3">
-        <p>👋 Hi, I&apos;m <a href="https://dingran.me">Ran Ding</a>. Each week of my life is a little box.</p>
-        
+        <p>👋 Hi, I&apos;m <a href="https://yizhouyu.github.io">Yizhou Yu</a>. Each week of my life is a little box.</p>
+
         <p>💡 Inspired by <a href="https://waitbutwhy.com/2014/05/life-weeks.html">Wait But Why</a>. Adapted from <a href="https://github.com/ginatrapani/life-in-weeks">Gina&apos;s work</a>.<br/>
-        💻 My code is <a href="https://github.com/dingran/life-in-weeks-nextjs">here</a>. Also <a href="https://www.coryzue.com/">Cory</a> built <a href="https://lifeweeks.app/">an app</a> for this.</p>
+        💻 Built with <a href="https://rd.me/weeks">Ran Ding&apos;s</a> <a href="https://github.com/dingran/life-in-weeks-nextjs">open-source code</a>. My fork is <a href="https://github.com/yizhouyu/life-in-weeks-nextjs">here</a>.</p>
       </div>
       
       <div className="compact-toggle" style={{ textAlign: 'center', marginTop: '0.75rem', marginBottom: '0.5rem' }}>
