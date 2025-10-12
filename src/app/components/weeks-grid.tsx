@@ -8,6 +8,7 @@ import { EventsData, WeeksConfig } from '../data/life-events'
 import { worldEvents } from '../data/world-events'
 import { usPresidents } from '../data/us-presidents'
 import { APP_CONFIG } from '../config/app-config'
+import { EventFilters } from './event-filter'
 import { formatDateString, getAge, getWeekStartSunday } from '../utils/date-processing'
 import { 
   GridBox, 
@@ -38,20 +39,31 @@ interface MergedEvent {
   association?: string
 }
 
-// Merge all event sources based on config
-function getMergedEvents(lifeEvents: EventsData) {
+// Merge all event sources based on filters
+function getMergedEvents(lifeEvents: EventsData, filters: EventFilters) {
   const merged: Record<string, MergedEvent[]> = {}
-  
-  // Add personal events
-  Object.entries(lifeEvents).forEach(([date, events]) => {
-    merged[date] = events.map(event => ({
-      ...event,
-      eventType: 'personal' as const
-    }))
-  })
-  
+
+  // Add personal events if enabled and filter by category
+  if (filters.showPersonalEvents) {
+    Object.entries(lifeEvents).forEach(([date, events]) => {
+      const filteredEvents = events.filter(event => {
+        // If no category specified, include by default
+        if (!event.category) return true
+        // Otherwise check if this category is enabled
+        return filters.personalCategories[event.category]
+      })
+
+      if (filteredEvents.length > 0) {
+        merged[date] = filteredEvents.map(event => ({
+          ...event,
+          eventType: 'personal' as const
+        }))
+      }
+    })
+  }
+
   // Add world events if enabled
-  if (APP_CONFIG.defaultShowWorldEvents) {
+  if (filters.showWorldEvents) {
     Object.entries(worldEvents).forEach(([date, events]) => {
       if (!merged[date]) merged[date] = []
       merged[date].push(...events.map(event => ({
@@ -60,9 +72,9 @@ function getMergedEvents(lifeEvents: EventsData) {
       })))
     })
   }
-  
+
   // Add US presidents if enabled
-  if (APP_CONFIG.defaultShowPresidents) {
+  if (filters.showPresidents) {
     Object.entries(usPresidents).forEach(([date, events]) => {
       if (!merged[date]) merged[date] = []
       merged[date].push(...events.map(event => ({
@@ -71,7 +83,7 @@ function getMergedEvents(lifeEvents: EventsData) {
       })))
     })
   }
-  
+
   return merged
 }
 
@@ -79,10 +91,11 @@ interface WeeksGridProps {
   isCompactMode: boolean
   lifeEvents: EventsData
   weeksConfig: WeeksConfig
+  filters: EventFilters
 }
 
 export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
-  function WeeksGrid({ isCompactMode, lifeEvents, weeksConfig }, ref) {
+  function WeeksGrid({ isCompactMode, lifeEvents, weeksConfig, filters }, ref) {
   const [containerWidth, setContainerWidth] = useState<number>(0)
   const gridContainerRef = useRef<HTMLDivElement>(null)
   
@@ -132,7 +145,7 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
   const milestoneColors = generateMilestoneColors(lifeEvents)
   
   // Get merged events from all sources
-  const mergedEvents = getMergedEvents(lifeEvents)
+  const mergedEvents = getMergedEvents(lifeEvents, filters)
   
   // Initialize milestone tracking
   const milestoneWeeks = new Set<string>()  // Track weeks with milestone events

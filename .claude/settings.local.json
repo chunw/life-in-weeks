@@ -10,7 +10,10 @@
       "mcp__ide__getDiagnostics",
       "Bash(yarn typecheck)",
       "Bash(rm:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebSearch",
+      "Bash(npx tsc:*)",
+      "Bash(./node_modules/.bin/tsc:*)"
     ],
     "deny": []
   }
