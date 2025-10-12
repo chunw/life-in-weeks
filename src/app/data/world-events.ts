@@ -57,25 +57,11 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       category: "war"
     }
   ],
-  "2003-03-20": [
-    {
-      headline: "🇮🇶 Iraq War Begins",
-      description: "US invasion of Iraq - https://en.wikipedia.org/wiki/Iraq_War",
-      category: "war"
-    }
-  ],
   "2004-02-04": [
     {
       headline: "👥 Facebook Founded",
       description: "Mark Zuckerberg launches TheFacebook - https://en.wikipedia.org/wiki/History_of_Facebook",
       category: "technology"
-    }
-  ],
-  "2005-08-29": [
-    {
-      headline: "🌀 Hurricane Katrina",
-      description: "Devastating New Orleans - https://en.wikipedia.org/wiki/Hurricane_Katrina",
-      category: "disaster"
     }
   ],
   "2007-01-09": [
@@ -106,18 +92,18 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       category: "disaster"
     }
   ],
-  "2011-05-02": [
-    {
-      headline: "💀 Bin Laden Killed",
-      description: "US Navy SEALs operation - https://en.wikipedia.org/wiki/Killing_of_Osama_bin_Laden",
-      category: "war"
-    }
-  ],
   "2020-01-21": [
     {
       headline: "🦠 First US COVID Case",
       description: "Pandemic begins - https://en.wikipedia.org/wiki/COVID-19_pandemic",
       category: "disaster"
+    }
+  ],
+  "2021-10-28": [
+    {
+      headline: "🌐 Facebook Renamed to Meta",
+      description: "Mark Zuckerberg announces company rebranding to focus on metaverse - https://en.wikipedia.org/wiki/Meta_Platforms",
+      category: "technology"
     }
   ],
   "2022-11-30": [

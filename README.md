@@ -2,6 +2,8 @@
 
 Inspired by [Wait But Why](https://waitbutwhy.com/2014/05/life-weeks.html) and [Gina Trapani's implementation](https://github.com/ginatrapani/life-in-weeks). I adapted it to Next.js - feel free to fork the code.
 
+**Live demo**: [https://life-in-weeks-yzy.vercel.app/](https://life-in-weeks-yzy.vercel.app/)
+
 For a more user-friendly app version, check out [lifeweeks.app](https://lifeweeks.app/) by Cory Zue.
 
 ## Features

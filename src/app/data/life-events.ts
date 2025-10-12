@@ -65,7 +65,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     "2018-05-01": [
       {
         headline: "💼 Meta Internship",
-        description: "Interned at Meta"
+        description: "Interned at Meta's New York City Office"
       }
     ],
     "2020-05-01": [
