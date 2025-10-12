@@ -227,12 +227,121 @@ Modify [grid-layout.ts](src/app/utils/grid-layout.ts):
 
 ## Deployment Notes
 
-**Vercel Deployment**:
-1. Add environment variables in Vercel dashboard (Project Settings → Environment Variables)
+### Production Setup
+
+**Primary Domain**: `https://yzyzy.dev/weeks`
+
+**Architecture**:
+- Main site (`yzyzy.dev`) hosted on GitHub Pages
+- Life in Weeks app (`yzyzy.dev/weeks`) hosted on Vercel
+- Cloudflare Worker proxies `/weeks` path to Vercel
+- URLs stay as `yzyzy.dev/weeks` in browser (no redirect)
+
+### Cloudflare Worker Configuration
+
+**Worker Name**: `weeks-proxy` (or similar)
+
+**Worker Code**:
+```javascript
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+
+    // If path starts with /weeks, proxy to Vercel
+    if (url.pathname.startsWith('/weeks')) {
+      const vercelUrl = new URL(request.url);
+      vercelUrl.hostname = 'life-in-weeks-yzy.vercel.app';
+
+      // Remove /weeks prefix since Vercel app expects root
+      vercelUrl.pathname = vercelUrl.pathname.replace(/^\/weeks/, '') || '/';
+
+      // Fetch from Vercel
+      const response = await fetch(vercelUrl, {
+        headers: request.headers,
+        method: request.method,
+        body: request.body,
+        redirect: 'manual'
+      });
+
+      // Clone response to modify headers
+      const newResponse = new Response(response.body, response);
+
+      // Remove any redirect headers
+      newResponse.headers.delete('Location');
+
+      // Rewrite any absolute URLs in the response to use /weeks prefix
+      if (newResponse.headers.get('content-type')?.includes('text/html')) {
+        let html = await response.text();
+
+        // Fix relative URLs to include /weeks prefix
+        html = html.replace(/href="\//g, 'href="/weeks/');
+        html = html.replace(/src="\//g, 'src="/weeks/');
+        html = html.replace(/action="\//g, 'action="/weeks/');
+
+        return new Response(html, {
+          status: newResponse.status,
+          statusText: newResponse.statusText,
+          headers: newResponse.headers
+        });
+      }
+
+      return newResponse;
+    }
+
+    // Otherwise, pass through to origin (GitHub Pages)
+    return fetch(request);
+  }
+}
+```
+
+**Worker Route**: `yzyzy.dev/weeks*` → `weeks-proxy` worker
+
+**DNS Configuration** (Cloudflare):
+- 4 A records pointing to GitHub Pages IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
+- **All A records must have Proxy status = "Proxied" (orange cloud)** ← Critical for worker to intercept requests
+- No CNAME or custom domain configuration needed in Vercel
+
+### Vercel Configuration
+
+**Environment Variables**:
+1. Go to Vercel dashboard → Project Settings → Environment Variables
 2. Required: `REAL_BIRTH_DATE=YYYY-MM-DD`
-3. Deploy: `git push` triggers automatic deployment
+
+**Domain Configuration**:
+- Do NOT add `yzyzy.dev` as a custom domain in Vercel
+- Keep default `.vercel.app` domain for direct access
+- Cloudflare Worker handles routing from custom domain
+
+**Deployment**:
+- `git push` triggers automatic deployment
+- Changes appear at `yzyzy.dev/weeks` after Vercel build completes
 
 **Analytics**: Vercel Analytics is enabled via `@vercel/analytics` in [layout.tsx](src/app/layout.tsx).
+
+### How the Routing Works
+
+1. User visits `yzyzy.dev/weeks`
+2. DNS resolves to Cloudflare (proxied A records)
+3. Cloudflare Worker intercepts request (matches route `yzyzy.dev/weeks*`)
+4. Worker proxies request to `life-in-weeks-yzy.vercel.app`
+5. Worker rewrites response HTML to include `/weeks` prefix in all URLs
+6. User sees content with URL staying as `yzyzy.dev/weeks`
+
+### Troubleshooting
+
+**If `yzyzy.dev/weeks` redirects to Vercel URL:**
+- Check Cloudflare DNS: All A records must be "Proxied" (orange cloud)
+- Verify Worker Route is configured for `yzyzy.dev/weeks*`
+- Clear browser cache or test in incognito mode
+
+**If Worker isn't triggering:**
+- Ensure DNS Proxy status is enabled (orange cloud, not gray)
+- Check Worker Route matches exactly: `yzyzy.dev/weeks*`
+- Verify worker is deployed and active
+
+**If assets fail to load:**
+- Check worker code rewrites all URL types (`href`, `src`, `action`)
+- Verify no hardcoded absolute URLs in the app code
 
 ## Code Patterns to Follow
 
