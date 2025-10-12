@@ -21,7 +21,9 @@
       "Bash(git log:*)",
       "Bash(curl -I https://yzyzy.dev/weeks)",
       "Bash(dig:*)",
-      "Bash(curl -sL https://yzyzy.dev/weeks)"
+      "Bash(curl -sL https://yzyzy.dev/weeks)",
+      "Bash(curl -sL https://yzyzy.dev/)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }
