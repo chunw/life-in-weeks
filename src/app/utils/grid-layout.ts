@@ -341,40 +341,23 @@ export function createTooltip(
   description?: string,
   eventDate?: string,
   eventType?: 'personal' | 'world' | 'president',
-  showPersonalEventDates: boolean = true,
-  doing?: string, 
-  association?: string, 
-  based?: string
+  showPersonalEventDates: boolean = true
 ): string {
   // Use event date if available and appropriate
   const dateToShow = eventDate || weekStartDate
-  
+
   // Determine if we should show full date based on event type and privacy setting
   const showFullDate = eventType !== 'personal' || showPersonalEventDates
-  
+
   const formattedDate = formatTooltipDateLocal(dateToShow, showFullDate)
-  
+
   if (description) {
     return `${formattedDate} – ${description}`
   }
-  
-  // Build context string for empty weeks
-  const contexts: string[] = []
-  
-  if (doing) {
-    contexts.push(doing)
-  }
-  
-  if (association) {
-    contexts.push(`at ${association}`)
-  }
-  
-  if (based) {
-    contexts.push(`based in ${based}`)
-  }
-  
-  const contextString = contexts.join(', ')
-  return `${formattedDate} – ${contextString}`
+
+  // For empty weeks, show just the month and year
+  // This provides useful context when hovering over cells
+  return formattedDate
 }
 
 /**
