@@ -18,7 +18,10 @@
       "Bash(npm run typecheck)",
       "Bash(npm install)",
       "Bash(npm install:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(curl -I https://yzyzy.dev/weeks)",
+      "Bash(dig:*)",
+      "Bash(curl -sL https://yzyzy.dev/weeks)"
     ],
     "deny": []
   }
