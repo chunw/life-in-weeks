@@ -258,12 +258,16 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
           }
           allBoxes.push(weekBox)
         } else {
-          // Create tooltip that includes all events in this week
-          const allEventDescriptions = eventsForWeek.map(e => {
-            const prefix = e.eventType === 'world' ? '🌍 ' : 
-                          e.eventType === 'president' ? '🇺🇸 ' : ''
-            return prefix + e.headline + (e.description ? ` - ${e.description}` : '')
-          }).join('\n')
+          // Create tooltip only if there are events with descriptions
+          const eventsWithDescriptions = eventsForWeek.filter(e => e.description)
+          const allEventDescriptions = eventsWithDescriptions.length > 0
+            ? eventsWithDescriptions.map(e => {
+                // Add emoji prefix for world/president events to distinguish them
+                const prefix = e.eventType === 'world' ? '🌍 ' :
+                              e.eventType === 'president' ? '🇺🇸 ' : ''
+                return prefix + e.description
+              }).join('\n')
+            : undefined
           
           const eventLabel = isCompactMode ? createCompactEventLabel(primaryEvent.headline) : primaryEvent.headline
           
