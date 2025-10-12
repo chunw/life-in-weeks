@@ -33,10 +33,7 @@ This codebase protects sensitive personal information. For your own deployment:
 1. **Create `.env.local`** (git-ignored):
 ```bash
 # Required environment variables for sensitive dates
-REAL_BIRTH_DATE=1990-01-15
-REAL_MET_WIFE_DATE=2010-02-14
-REAL_MARRIAGE_DATE=2015-06-01
-REAL_CITIZENSHIP_DATE=2020-07-04
+REAL_BIRTH_DATE=YYYY-MM-DD
 ```
 
 2. **Configure other settings** in `src/app/config/app-config.ts`:

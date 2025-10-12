@@ -43,8 +43,8 @@ export const APP_CONFIG: AppConfig = {
   defaultShowPresidents: false,     // US presidents off by default (can be enabled if needed)
   
   // Personal Timeline Settings
-  name: "Ran Ding",
-  website: "https://dingran.me",
+  name: "Yizhou Yu",
+  website: "https://yizhouyu.github.io",
   
   // Grid Display Settings
   showRowNumbers: false,            // Clean look without row numbers

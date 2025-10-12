@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         url: "/screencapture-localhost-3001-2025-06-15-20_26_45.png",
         width: 1200,
         height: 630,
-        alt: "Life in Weeks - Visual timeline of Ran Ding's life",
+        alt: "Life in Weeks - Visual timeline of Yizhou Yu's life",
       }
     ],
   },
