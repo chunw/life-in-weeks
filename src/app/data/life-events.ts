@@ -122,6 +122,34 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "work"
       }
     ],
+    "2022-09-02": [
+      {
+        headline: "😴 Long Island",
+        description: "Travel to Long Island",
+        category: "travel"
+      }
+    ],
+    "2022-10-19": [
+      {
+        headline: "🍂 Boston",
+        description: "Travel to Boston",
+        category: "travel"
+      }
+    ],
+    "2022-11-23": [
+      {
+        headline: "🏖️ Miami",
+        description: "Travel to Miami",
+        category: "travel"
+      }
+    ],
+    "2022-12-30": [
+      {
+        headline: "🏂 Vermont Snowboarding",
+        description: "Snowboarding at Stowe and Killington",
+        category: "travel"
+      }
+    ],
     "2023-02-18": [
       {
         headline: "🎨 Beacon",
