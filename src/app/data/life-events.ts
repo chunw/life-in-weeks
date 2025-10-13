@@ -136,11 +136,53 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "work"
       }
     ],
+    "2025-04-04": [
+      {
+        headline: "🪨 Utah",
+        description: "Travel to Utah",
+        category: "travel"
+      }
+    ],
+    "2025-07-04": [
+      {
+        headline: "🏔️ Colorado",
+        description: "Travel to Colorado",
+        category: "travel"
+      }
+    ],
+    "2025-08-29": [
+      {
+        headline: "🧊 Alaska",
+        description: "Travel to Alaska",
+        category: "travel"
+      }
+    ],
     "2025-10-11": [
       {
         headline: "🤖 Created this page using Claude Code",
         description: "Built this Life in Weeks visualization with Claude Code: https://claude.com/claude-code",
         category: "achievement"
+      }
+    ],
+    "2025-11-26": [
+      {
+        headline: "🦭 Tampa",
+        description: "Travel to Tampa, Florida",
+        category: "travel"
+      }
+    ],
+    "2025-12-12": [
+      {
+        headline: "🌮 New Mexico",
+        description: "Travel to New Mexico",
+        category: "travel"
+      }
+    ],
+    "2025-12-21": [
+      {
+        headline: "⛲ Southern California",
+        description: "Travel to Southern California (San Diego, Palm Springs, LA)",
+        category: "travel"
       }
     ],
     ...(APP_CONFIG.showLifeExpectancy ? {
