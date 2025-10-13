@@ -122,11 +122,102 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "work"
       }
     ],
+    "2023-02-18": [
+      {
+        headline: "🎨 Beacon",
+        description: "Travel to Beacon, NY",
+        category: "travel"
+      }
+    ],
+    "2023-04-07": [
+      {
+        headline: "🌳 Charleston & Savannah",
+        description: "Travel to Charleston and Savannah",
+        category: "travel"
+      }
+    ],
+    "2023-04-26": [
+      {
+        headline: "🐻 Ithaca",
+        description: "Travel to Ithaca, NY",
+        category: "travel"
+      }
+    ],
+    "2023-06-10": [
+      {
+        headline: "💼 Bay Area",
+        description: "Travel to Bay Area",
+        category: "travel"
+      }
+    ],
+    "2023-09-02": [
+      {
+        headline: "🏔️ Seattle & Portland",
+        description: "Travel to Seattle and Portland",
+        category: "travel"
+      }
+    ],
+    "2023-10-20": [
+      {
+        headline: "🍁 DC & Shenandoah National Park",
+        description: "Travel to DC and Shenandoah National Park",
+        category: "travel"
+      }
+    ],
+    "2023-11-11": [
+      {
+        headline: "💼 Boston",
+        description: "Travel to Boston",
+        category: "travel"
+      }
+    ],
+    "2023-12-17": [
+      {
+        headline: "🍹 Hollywood / Fort Lauderdale",
+        description: "Travel to Hollywood and Fort Lauderdale, Florida",
+        category: "travel"
+      }
+    ],
+    "2024-03-15": [
+      {
+        headline: "🤠 Texas",
+        description: "Travel to Texas",
+        category: "travel"
+      }
+    ],
     "2024-05-01": [
       {
         headline: "👨‍🏫 Hosted Yuzhou Jiang",
         description: "As intern manager at Meta",
         category: "work"
+      }
+    ],
+    "2024-07-03": [
+      {
+        headline: "🚣 Adirondack",
+        description: "Travel to Adirondack",
+        category: "travel"
+      }
+    ],
+    "2024-10-12": [
+      {
+        headline: "📒 New Haven",
+        description: "Travel to New Haven, CT",
+        category: "travel"
+      }
+    ],
+    "2024-11-28": [
+      {
+        headline: "🐠 Puerto Rico",
+        description: "Travel to Puerto Rico",
+        category: "travel"
+      }
+    ],
+    "2024-12-30": [
+      {
+        headline: "🌵 Arizona",
+        description: "Travel to Arizona",
+        category: "travel"
       }
     ],
     "2025-05-01": [
