@@ -2,7 +2,7 @@
 
 Inspired by [Wait But Why](https://waitbutwhy.com/2014/05/life-weeks.html) and [Gina Trapani's implementation](https://github.com/ginatrapani/life-in-weeks). I adapted it to Next.js - feel free to fork the code.
 
-**Live demo**: [https://yzyzy.dev/weeks](https://yzyzy.dev/weeks) | [Vercel](https://life-in-weeks-yzy.vercel.app/)
+**Live demo**: [https://yizhouyu.dev/weeks](https://yizhouyu.dev/weeks) | [Vercel](https://life-in-weeks-yzy.vercel.app/)
 
 For a more user-friendly app version, check out [lifeweeks.app](https://lifeweeks.app/) by Cory Zue.
 
@@ -192,12 +192,12 @@ src/app/
 
 ## Advanced Deployment (Cloudflare + Vercel)
 
-This project is deployed at `https://yzyzy.dev/weeks` using a sophisticated setup:
+This project is deployed at `https://yizhouyu.dev/weeks` using a sophisticated setup:
 
-- **Main site** (`yzyzy.dev`) hosted on GitHub Pages
+- **Main site** (`yizhouyu.dev`) hosted on GitHub Pages
 - **Life in Weeks app** hosted on Vercel
 - **Cloudflare Worker** proxies `/weeks` path to Vercel
-- URLs stay as `yzyzy.dev/weeks` (no redirect visible to users)
+- URLs stay as `yizhouyu.dev/weeks` (no redirect visible to users)
 
 ### Setup Steps
 

@@ -42,7 +42,7 @@ yarn start
 
 ## Branding & Favicon
 
-**Favicon Standard**: All pages in this project use the YY logo favicon matching the main site (yzyzy.dev):
+**Favicon Standard**: All pages in this project use the YY logo favicon matching the main site (yizhouyu.dev):
 
 ```typescript
 // In any layout.tsx or page metadata
@@ -247,13 +247,13 @@ Modify [grid-layout.ts](src/app/utils/grid-layout.ts):
 
 ### Production Setup
 
-**Primary Domain**: `https://yzyzy.dev/weeks`
+**Primary Domain**: `https://yizhouyu.dev/weeks`
 
 **Architecture**:
-- Main site (`yzyzy.dev`) hosted on GitHub Pages
-- Life in Weeks app (`yzyzy.dev/weeks`) hosted on Vercel
+- Main site (`yizhouyu.dev`) hosted on GitHub Pages
+- Life in Weeks app (`yizhouyu.dev/weeks`) hosted on Vercel
 - Cloudflare Worker proxies `/weeks` path to Vercel
-- URLs stay as `yzyzy.dev/weeks` in browser (no redirect)
+- URLs stay as `yizhouyu.dev/weeks` in browser (no redirect)
 
 ### Cloudflare Worker Configuration
 
@@ -312,7 +312,7 @@ export default {
 }
 ```
 
-**Worker Route**: `yzyzy.dev/weeks*` → `weeks-proxy` worker
+**Worker Route**: `yizhouyu.dev/weeks*` → `weeks-proxy` worker
 
 **DNS Configuration** (Cloudflare):
 - 4 A records pointing to GitHub Pages IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
@@ -326,35 +326,35 @@ export default {
 2. Required: `REAL_BIRTH_DATE=YYYY-MM-DD`
 
 **Domain Configuration**:
-- Do NOT add `yzyzy.dev` as a custom domain in Vercel
+- Do NOT add `yizhouyu.dev` as a custom domain in Vercel
 - Keep default `.vercel.app` domain for direct access
 - Cloudflare Worker handles routing from custom domain
 
 **Deployment**:
 - `git push` triggers automatic deployment
-- Changes appear at `yzyzy.dev/weeks` after Vercel build completes
+- Changes appear at `yizhouyu.dev/weeks` after Vercel build completes
 
 **Analytics**: Vercel Analytics is enabled via `@vercel/analytics` in [layout.tsx](src/app/layout.tsx).
 
 ### How the Routing Works
 
-1. User visits `yzyzy.dev/weeks`
+1. User visits `yizhouyu.dev/weeks`
 2. DNS resolves to Cloudflare (proxied A records)
-3. Cloudflare Worker intercepts request (matches route `yzyzy.dev/weeks*`)
+3. Cloudflare Worker intercepts request (matches route `yizhouyu.dev/weeks*`)
 4. Worker proxies request to `life-in-weeks-yzy.vercel.app`
 5. Worker rewrites response HTML to include `/weeks` prefix in all URLs
-6. User sees content with URL staying as `yzyzy.dev/weeks`
+6. User sees content with URL staying as `yizhouyu.dev/weeks`
 
 ### Troubleshooting
 
-**If `yzyzy.dev/weeks` redirects to Vercel URL:**
+**If `yizhouyu.dev/weeks` redirects to Vercel URL:**
 - Check Cloudflare DNS: All A records must be "Proxied" (orange cloud)
-- Verify Worker Route is configured for `yzyzy.dev/weeks*`
+- Verify Worker Route is configured for `yizhouyu.dev/weeks*`
 - Clear browser cache or test in incognito mode
 
 **If Worker isn't triggering:**
 - Ensure DNS Proxy status is enabled (orange cloud, not gray)
-- Check Worker Route matches exactly: `yzyzy.dev/weeks*`
+- Check Worker Route matches exactly: `yizhouyu.dev/weeks*`
 - Verify worker is deployed and active
 
 **If assets fail to load:**

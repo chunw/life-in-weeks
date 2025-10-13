@@ -12,6 +12,7 @@
       "Bash(rm:*)",
       "Bash(git commit:*)",
       "WebSearch",
+      "WebFetch",
       "Bash(npx tsc:*)",
       "Bash(./node_modules/.bin/tsc:*)",
       "Bash(git revert:*)",
@@ -23,7 +24,10 @@
       "Bash(dig:*)",
       "Bash(curl -sL https://yzyzy.dev/weeks)",
       "Bash(curl -sL https://yzyzy.dev/)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp:*)",
+      "Read(//Users/yizhouyu/**)",
     ],
     "deny": []
   }
