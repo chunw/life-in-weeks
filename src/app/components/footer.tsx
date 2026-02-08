@@ -2,12 +2,12 @@ export function Footer() {
   return (
     <footer style={{ textAlign: 'center', padding: '2rem 0', marginTop: '2rem' }}>
       <a
-        href="https://github.com/yizhouyu/life-in-weeks-nextjs"
+        href="https://github.com/chunw/life-in-weeks"
         target="_blank"
         rel="noopener noreferrer"
-        style={{ 
-          display: 'inline-flex', 
-          alignItems: 'center', 
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
           gap: '0.5rem',
           color: 'var(--text-color)',
           textDecoration: 'none',

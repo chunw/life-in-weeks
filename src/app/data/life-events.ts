@@ -10,8 +10,7 @@ export interface SensitiveDates {
 /**
  * Event Category Type - Categories for personal life events
  */
-export type EventCategory = 'personal' | 'education' | 'work' | 'travel' | 'achievement'
-
+export type EventCategory = 'personal'
 /**
  * LifeEvent Interface - Defines the structure for life events
  *
@@ -44,7 +43,7 @@ export interface LifeEvent {
 
 export type EventsData = Record<string, LifeEvent[]>
 
-// Weeks configuration interface  
+// Weeks configuration interface
 export interface WeeksConfig {
   startDate: string
   endYear: number
@@ -56,252 +55,25 @@ export interface WeeksConfig {
 // Function to create life events with sensitive dates and derived config
 export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: { lifeExpectancyDate: string; japanLifeExpectancyDate: string; lifeExpectancyLabel: string; japanLifeExpectancyLabel: string }): EventsData {
   return {
-    [sensitiveDates.birthDate]: [
+//    [sensitiveDates.birthDate]: [
+    "1991-06-05": [
       {
-        headline: "🐣 Born in Shanghai",
+        headline: "🐣 Born",
         category: "personal"
       }
     ],
-    "2009-09-01": [
+    //  "2017-09-15": [
+    //   {
+    //     headline: "Started school at Stanford University",
+    //     description: "",
+    //     category: "personal"
+    //   }
+    // ],
+    "2026-02-02": [
       {
-        headline: "🎓 Started at Shanghai Foreign Language School",
-        milestone: true,
-        category: "education"
-      }
-    ],
-    "2016-08-01": [
-      {
-        headline: "✈️ Came to US for College",
-        milestone: true,
-        description: "Started at Cornell University",
-        category: "education"
-      }
-    ],
-    "2018-05-01": [
-      {
-        headline: "💼 Meta Internship",
-        description: "Interned at Meta's New York City Office",
-        category: "work"
-      }
-    ],
-    "2020-05-01": [
-      {
-        headline: "🎓 Graduated from Cornell University",
-        milestone: true,
-        description: "Bachelor's and Master's degrees",
-        category: "education"
-      }
-    ],
-    "2020-07-01": [
-      {
-        headline: "💼 Started at Meta full-time as a Software Engineer",
-        milestone: true,
-        description: "Joined Applied Privacy Technology Team",
-        category: "work"
-      }
-    ],
-    "2021-05-01": [
-      {
-        headline: "👨‍🏫 Hosted Kensal Ramos",
-        description: "As intern manager at Meta",
-        category: "work"
-      }
-    ],
-    "2022-05-01": [
-      {
-        headline: "👨‍🏫 Hosted Elizabeth Ke",
-        description: "As intern manager at Meta",
-        category: "work"
-      }
-    ],
-    "2022-08-01": [
-      {
-        headline: "🔬 Joined Experimentation Platform Team",
-        milestone: true,
-        description: "Switched to the Experimentation Platform team at Meta",
-        category: "work"
-      }
-    ],
-    "2022-09-02": [
-      {
-        headline: "😴 Long Island",
-        description: "Travel to Long Island",
-        category: "travel"
-      }
-    ],
-    "2022-10-19": [
-      {
-        headline: "🍂 Boston",
-        description: "Travel to Boston",
-        category: "travel"
-      }
-    ],
-    "2022-11-23": [
-      {
-        headline: "🏖️ Miami",
-        description: "Travel to Miami",
-        category: "travel"
-      }
-    ],
-    "2022-12-30": [
-      {
-        headline: "🏂 Vermont Snowboarding",
-        description: "Snowboarding at Stowe and Killington",
-        category: "travel"
-      }
-    ],
-    "2023-02-18": [
-      {
-        headline: "🎨 Beacon",
-        description: "Travel to Beacon, NY",
-        category: "travel"
-      }
-    ],
-    "2023-04-07": [
-      {
-        headline: "🌳 Charleston & Savannah",
-        description: "Travel to Charleston and Savannah",
-        category: "travel"
-      }
-    ],
-    "2023-04-26": [
-      {
-        headline: "🐻 Ithaca",
-        description: "Travel to Ithaca, NY",
-        category: "travel"
-      }
-    ],
-    "2023-06-10": [
-      {
-        headline: "💼 Bay Area",
-        description: "Travel to Bay Area",
-        category: "travel"
-      }
-    ],
-    "2023-09-02": [
-      {
-        headline: "🏔️ Seattle & Portland",
-        description: "Travel to Seattle and Portland",
-        category: "travel"
-      }
-    ],
-    "2023-10-20": [
-      {
-        headline: "🍁 DC & Shenandoah National Park",
-        description: "Travel to DC and Shenandoah National Park",
-        category: "travel"
-      }
-    ],
-    "2023-11-11": [
-      {
-        headline: "💼 Boston",
-        description: "Travel to Boston",
-        category: "travel"
-      }
-    ],
-    "2023-12-17": [
-      {
-        headline: "🍹 Hollywood / Fort Lauderdale",
-        description: "Travel to Hollywood and Fort Lauderdale, Florida",
-        category: "travel"
-      }
-    ],
-    "2024-03-15": [
-      {
-        headline: "🤠 Texas",
-        description: "Travel to Texas",
-        category: "travel"
-      }
-    ],
-    "2024-05-01": [
-      {
-        headline: "👨‍🏫 Hosted Yuzhou Jiang",
-        description: "As intern manager at Meta",
-        category: "work"
-      }
-    ],
-    "2024-07-03": [
-      {
-        headline: "🚣 Adirondack",
-        description: "Travel to Adirondack",
-        category: "travel"
-      }
-    ],
-    "2024-10-12": [
-      {
-        headline: "📒 New Haven",
-        description: "Travel to New Haven, CT",
-        category: "travel"
-      }
-    ],
-    "2024-11-28": [
-      {
-        headline: "🐠 Puerto Rico",
-        description: "Travel to Puerto Rico",
-        category: "travel"
-      }
-    ],
-    "2024-12-30": [
-      {
-        headline: "🌵 Arizona",
-        description: "Travel to Arizona",
-        category: "travel"
-      }
-    ],
-    "2025-05-01": [
-      {
-        headline: "👨‍🏫 Hosted Aiden Mizhen",
-        description: "As intern manager at Meta",
-        category: "work"
-      }
-    ],
-    "2025-04-04": [
-      {
-        headline: "🪨 Utah",
-        description: "Travel to Utah",
-        category: "travel"
-      }
-    ],
-    "2025-07-04": [
-      {
-        headline: "🏔️ Colorado",
-        description: "Travel to Colorado",
-        category: "travel"
-      }
-    ],
-    "2025-08-29": [
-      {
-        headline: "🧊 Alaska",
-        description: "Travel to Alaska",
-        category: "travel"
-      }
-    ],
-    "2025-10-11": [
-      {
-        headline: "🤖 Created this page using Claude Code",
-        description: "Built this Life in Weeks visualization with Claude Code: https://claude.com/claude-code",
-        category: "achievement"
-      }
-    ],
-    "2025-11-26": [
-      {
-        headline: "🦭 Tampa",
-        description: "Travel to Tampa, Florida",
-        category: "travel"
-      }
-    ],
-    "2025-12-12": [
-      {
-        headline: "🌮 New Mexico",
-        description: "Travel to New Mexico",
-        category: "travel"
-      }
-    ],
-    "2025-12-21": [
-      {
-        headline: "⛲ Southern California",
-        description: "Travel to Southern California (San Diego, Palm Springs, LA)",
-        category: "travel"
+        headline: "Exhibition at the United Nations Headquarters in New York",
+        description: "Honored to be invited to exhibit my work at the United Nations Headquarters in New York. ",
+        category: "personal"
       }
     ],
     ...(APP_CONFIG.showLifeExpectancy ? {
@@ -335,4 +107,3 @@ export function createWeeksConfig(birthDate: string, derivedConfig: { endYear: n
     startDay: birthDate.split('-')[2]
   }
 }
-

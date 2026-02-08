@@ -56,7 +56,7 @@ export function EventFilter({ filters, setFilters }: EventFilterProps) {
   return (
     <div className="event-filter">
       <div className="filter-section">
-        <div className="filter-label">Event Filters:</div>
+        {/* <div className="filter-label">Event Filters:</div> */}
 
         {/* Main event type toggles */}
         <div className="filter-buttons">
@@ -79,84 +79,10 @@ export function EventFilter({ filters, setFilters }: EventFilterProps) {
             />
             <span className="filter-chip-text">World Events</span>
           </label>
-
-          <label className={`filter-chip ${filters.showPresidents ? 'active' : ''}`}>
-            <input
-              type="checkbox"
-              checked={filters.showPresidents}
-              onChange={() => toggleMainFilter('showPresidents')}
-              className="filter-checkbox"
-            />
-            <span className="filter-chip-text">US Presidents</span>
-          </label>
         </div>
       </div>
 
-      {/* Personal event category filters - only show when personal events are enabled */}
-      {filters.showPersonalEvents && (
-        <div className="filter-section category-section">
-          <div className="category-header">
-            <span className="filter-label">Personal Event Categories:</span>
-            <button
-              onClick={toggleAllPersonalCategories}
-              className="select-all-btn"
-            >
-              {allPersonalCategoriesEnabled ? 'Deselect All' : 'Select All'}
-            </button>
-          </div>
-          <div className="filter-buttons">
-            <label className={`filter-chip category-chip ${filters.personalCategories.personal ? 'active' : ''}`}>
-              <input
-                type="checkbox"
-                checked={filters.personalCategories.personal}
-                onChange={() => toggleCategoryFilter('personal')}
-                className="filter-checkbox"
-              />
-              <span className="filter-chip-text">Personal</span>
-            </label>
 
-            <label className={`filter-chip category-chip ${filters.personalCategories.education ? 'active' : ''}`}>
-              <input
-                type="checkbox"
-                checked={filters.personalCategories.education}
-                onChange={() => toggleCategoryFilter('education')}
-                className="filter-checkbox"
-              />
-              <span className="filter-chip-text">Education</span>
-            </label>
-
-            <label className={`filter-chip category-chip ${filters.personalCategories.work ? 'active' : ''}`}>
-              <input
-                type="checkbox"
-                checked={filters.personalCategories.work}
-                onChange={() => toggleCategoryFilter('work')}
-                className="filter-checkbox"
-              />
-              <span className="filter-chip-text">Work</span>
-            </label>
-
-            <label className={`filter-chip category-chip ${filters.personalCategories.travel ? 'active' : ''}`}>
-              <input
-                type="checkbox"
-                checked={filters.personalCategories.travel}
-                onChange={() => toggleCategoryFilter('travel')}
-                className="filter-checkbox"
-              />
-              <span className="filter-chip-text">Travel</span>
-            </label>
-
-            <label className={`filter-chip category-chip ${filters.personalCategories.achievement ? 'active' : ''}`}>
-              <input
-                type="checkbox"
-                checked={filters.personalCategories.achievement}
-                onChange={() => toggleCategoryFilter('achievement')}
-                className="filter-checkbox"
-              />
-              <span className="filter-chip-text">Achievements</span>
-            </label>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

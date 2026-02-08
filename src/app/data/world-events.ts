@@ -8,20 +8,6 @@ export interface WorldEvent {
 }
 
 export const worldEvents: Record<string, WorldEvent[]> = {
-  "1989-03-12": [
-    {
-      headline: "🌐 World Wide Web Invented",
-      description: "Tim Berners-Lee creates the web at CERN - https://en.wikipedia.org/wiki/World_Wide_Web",
-      category: "technology"
-    }
-  ],
-  "1989-11-09": [
-    {
-      headline: "🧱 Berlin Wall Falls",
-      description: "End of Cold War symbol - https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
-      category: "politics"
-    }
-  ],
   "1991-12-25": [
     {
       headline: "🇷🇺 Soviet Union Dissolves",
@@ -34,13 +20,6 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       headline: "💻 Windows 95 Released",
       description: "Microsoft's breakthrough OS - https://en.wikipedia.org/wiki/Windows_95",
       category: "technology"
-    }
-  ],
-  "1997-08-31": [
-    {
-      headline: "👑 Princess Diana Dies",
-      description: "Car crash in Paris - https://en.wikipedia.org/wiki/Death_of_Diana,_Princess_of_Wales",
-      category: "culture"
     }
   ],
   "1998-09-04": [
@@ -57,13 +36,6 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       category: "war"
     }
   ],
-  "2004-02-04": [
-    {
-      headline: "👥 Facebook Founded",
-      description: "Mark Zuckerberg launches TheFacebook - https://en.wikipedia.org/wiki/History_of_Facebook",
-      category: "technology"
-    }
-  ],
   "2007-01-09": [
     {
       headline: "📱 iPhone Announced",
@@ -78,46 +50,11 @@ export const worldEvents: Record<string, WorldEvent[]> = {
       category: "economy"
     }
   ],
-  "2009-01-03": [
-    {
-      headline: "₿ Bitcoin Genesis Block",
-      description: "Satoshi Nakamoto mines first Bitcoin - https://en.wikipedia.org/wiki/Bitcoin",
-      category: "technology"
-    }
-  ],
-  "2010-04-03": [
-    {
-      headline: "📱 iPad Released",
-      description: "Apple launches tablet revolution - https://en.wikipedia.org/wiki/IPad",
-      category: "technology"
-    }
-  ],
-  "2010-10-06": [
-    {
-      headline: "📸 Instagram Launched",
-      description: "Photo-sharing app goes live - https://en.wikipedia.org/wiki/Instagram",
-      category: "technology"
-    }
-  ],
-  "2014-02-19": [
-    {
-      headline: "💬 Facebook Acquires WhatsApp",
-      description: "$19 billion acquisition - https://en.wikipedia.org/wiki/WhatsApp",
-      category: "technology"
-    }
-  ],
   "2020-01-21": [
     {
       headline: "🦠 First US COVID Case",
       description: "Pandemic begins - https://en.wikipedia.org/wiki/COVID-19_pandemic",
       category: "disaster"
-    }
-  ],
-  "2021-10-28": [
-    {
-      headline: "🌐 Facebook Renamed to Meta",
-      description: "Mark Zuckerberg announces company rebranding to focus on metaverse - https://en.wikipedia.org/wiki/Meta_Platforms",
-      category: "technology"
     }
   ],
   "2022-11-30": [
