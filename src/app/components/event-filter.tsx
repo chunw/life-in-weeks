@@ -28,31 +28,6 @@ export function EventFilter({ filters, setFilters }: EventFilterProps) {
     })
   }
 
-  const toggleCategoryFilter = (category: keyof EventFilters['personalCategories']) => {
-    setFilters({
-      ...filters,
-      personalCategories: {
-        ...filters.personalCategories,
-        [category]: !filters.personalCategories[category]
-      }
-    })
-  }
-
-  const allPersonalCategoriesEnabled = Object.values(filters.personalCategories).every(v => v)
-  const toggleAllPersonalCategories = () => {
-    const newValue = !allPersonalCategoriesEnabled
-    setFilters({
-      ...filters,
-      personalCategories: {
-        personal: newValue,
-        education: newValue,
-        work: newValue,
-        travel: newValue,
-        achievement: newValue
-      }
-    })
-  }
-
   return (
     <div className="event-filter">
       <div className="filter-section">
