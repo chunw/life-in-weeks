@@ -71,8 +71,15 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     // ],
     "2026-02-02": [
       {
-        headline: "Exhibition at the United Nations Headquarters in New York",
+        headline: "Exhibition @United Nations Headquarters in New York",
         description: "Honored to be invited to exhibit my work at the United Nations Headquarters in New York. ",
+        category: "personal"
+      }
+    ],
+     "2026-02-15": [
+      {
+        headline: "Exhibition @Time Square, New York",
+        description: "Excited to have my work displayed at Time Square in New York as part of the Fun In Progress group show curated by HMVC Gallery New York. ",
         category: "personal"
       }
     ],
