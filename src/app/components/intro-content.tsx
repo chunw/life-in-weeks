@@ -2,19 +2,14 @@
 
 import React from 'react'
 
-interface IntroContentProps {
-  isCompactMode: boolean
-  setIsCompactMode: (compact: boolean) => void
-}
-
-export function IntroContent({ isCompactMode, setIsCompactMode }: IntroContentProps) {
+export function IntroContent() {
   return (
     <div className="intro-content">
       <div className="mt-3">
-        <p>👋 Hi, I&apos;m <a href="https://ls.chunwang.me/">Chun</a>.
-        Each week of my life is a little box. <a href="https://ls.chunwang.me/" style={{ marginLeft: '0.5rem' }}>← Back to main site</a></p>
+        <p>👋 Hi, I&apos;m  <a href="https://ls.chunwang.me/" style={{ marginLeft: '0.5rem' }}>Chun</a>.
+        Each week of my life is a little box here.</p>
 
-        <p>💡 Inspired by <a href="https://waitbutwhy.com/2014/05/life-weeks.html">Wait But Why</a>. My fork is <a href="https://github.com/chunw/life-in-weeks">here</a>.</p>
+        <p>Inspired by <a href="https://waitbutwhy.com/2014/05/life-weeks.html">Wait But Why</a></p>
 
         {/* <p style={{ fontSize: '0.9em', color: '#666', marginTop: '0.75rem' }}>
           🎨 <strong>Colors:</strong> Background colors change at major life milestones, marking different life phases.<br/>
@@ -22,16 +17,6 @@ export function IntroContent({ isCompactMode, setIsCompactMode }: IntroContentPr
         </p> */}
       </div>
 
-      <div className="compact-toggle" style={{ textAlign: 'center', marginTop: '0.75rem', marginBottom: '0.5rem' }}>
-        <button
-          type="button"
-          onClick={() => setIsCompactMode(!isCompactMode)}
-          className={`toggle-button ${isCompactMode ? 'compact-active' : 'standard-active'}`}
-          title={isCompactMode ? 'Switch to Standard View' : 'Switch to Compact View (fits entire life on screen)'}
-        >
-          {isCompactMode ? '📋 Switch to Standard View' : '🔍 Switch to Compact View'}
-        </button>
-      </div>
     </div>
   )
 }

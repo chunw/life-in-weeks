@@ -6,6 +6,7 @@ import { IntroContent } from './intro-content'
 import { WeeksGrid } from './weeks-grid'
 import { Footer } from './footer'
 import { EventFilter, EventFilters } from './event-filter'
+import { CompactToggle } from './compact-toggle'
 import { APP_CONFIG, DerivedConfig } from '../config/app-config'
 import { EventsData, WeeksConfig } from '../data/life-events'
 
@@ -51,14 +52,17 @@ export function LifeWeeksClient({ lifeEvents, weeksConfig, derivedConfig }: Life
           derivedConfig={derivedConfig}
           gridRef={gridRef}
         />
-        <IntroContent
-          isCompactMode={isCompactMode}
-          setIsCompactMode={setIsCompactMode}
-        />
-        <EventFilter
-          filters={filters}
-          setFilters={setFilters}
-        />
+        <IntroContent />
+        <div className="controls-row">
+          <EventFilter
+            filters={filters}
+            setFilters={setFilters}
+          />
+          <CompactToggle
+            isCompact={isCompactMode}
+            onToggle={setIsCompactMode}
+          />
+        </div>
         <WeeksGrid
           ref={gridRef}
           isCompactMode={isCompactMode}

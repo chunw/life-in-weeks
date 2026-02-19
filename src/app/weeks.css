@@ -59,8 +59,8 @@ html, body {
   --week-cell-border: #ccc;
   --body-font-size-desktop: 14px;
   --body-font-size-mobile: 11px;
-  --header-font-size-desktop: 56px;
-  --header-font-size-mobile: 30px;
+  --header-font-size-desktop: 48px;
+  --header-font-size-mobile: 26px;
   --font-family: 'Red Hat Display', system-ui, -apple-system, sans-serif;
 }
 
@@ -522,6 +522,25 @@ html, body {
   gap: 0.5rem;
 }
 
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.controls-row .event-filter {
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.controls-row .compact-toggle {
+  margin: 0;
+  text-align: right;
+  flex: 0 0 auto;
+}
+
 .filter-chip {
   display: inline-flex;
   align-items: center;
@@ -573,6 +592,15 @@ html, body {
 
 /* Mobile responsive adjustments */
 @media only screen and (max-width: 768px) {
+  .controls-row {
+    flex-wrap: wrap;
+  }
+
+  .controls-row .compact-toggle {
+    width: 100%;
+    text-align: center;
+  }
+
   .event-filter {
     padding: 0;
     margin: 0.75rem 0;
