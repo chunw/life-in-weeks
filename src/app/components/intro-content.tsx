@@ -6,9 +6,8 @@ export function IntroContent() {
   return (
     <div className="intro-content">
       <div className="mt-3">
-        <p>👋 Hi, I&apos;m  <a href="https://ls.chunwang.me/" style={{ marginLeft: '0.5rem' }}>Chun</a>.
+        <p>👋 Hi, I&apos;m <a href="https://ls.chunwang.me/" style={{ marginLeft: '0.5rem' }}>Chun</a>.
         Each week of my life is a little box here.</p>
-
         <p>Inspired by <a href="https://waitbutwhy.com/2014/05/life-weeks.html">Wait But Why</a></p>
 
         {/* <p style={{ fontSize: '0.9em', color: '#666', marginTop: '0.75rem' }}>
