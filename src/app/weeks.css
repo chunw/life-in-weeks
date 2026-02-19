@@ -17,7 +17,7 @@ html, body {
 
 .life-in-weeks-container .toggle-button {
   background: #f8f9fa;  /* Light gray background instead of blue */
-  color: var(--text-color);  /* Use same text color as body */
+  color: var(--week-cell-text);  /* Keep contrast on light button background */
   border: 1px solid #ccc;  /* Light gray, thinner border */
   border-radius: 8px;
   padding: 8px 16px;  /* Smaller padding for more compact look */
@@ -48,8 +48,8 @@ html, body {
 
 /* CSS Variables for theming */
 :root {
-  --main-bg-color: #f0f8ff;
-  --text-color: #3f5c72;
+  --main-bg-color: #000000;
+  --text-color: #d1d5db;
   --header-text-color: var(--text-color);
   --link-color: var(--text-color);
   --highlight-color: #4285f4;
@@ -57,10 +57,10 @@ html, body {
   --future-bg-color: #eee;
   --week-cell-text: #3f5c72;
   --week-cell-border: #ccc;
-  --body-font-size-desktop: 16px;
-  --body-font-size-mobile: 12px;
-  --header-font-size-desktop: 72px;
-  --header-font-size-mobile: 36px;
+  --body-font-size-desktop: 14px;
+  --body-font-size-mobile: 11px;
+  --header-font-size-desktop: 56px;
+  --header-font-size-mobile: 30px;
   --font-family: 'Red Hat Display', system-ui, -apple-system, sans-serif;
 }
 
@@ -455,11 +455,10 @@ html, body {
 
 .event-filter {
   margin: 1rem 0;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.6) !important;
-  border-radius: 12px;
-  border: 1px solid rgba(99, 135, 168, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
 }
 
 .filter-section {
@@ -526,35 +525,33 @@ html, body {
 .filter-chip {
   display: inline-flex;
   align-items: center;
-  padding: 0.4rem 0.9rem;
-  border: 1.5px solid rgba(99, 135, 168, 0.3);
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--week-cell-border);
+  border-radius: 4px;
+  background-color: transparent !important;
   color: var(--text-color) !important;
   font-size: 0.9em;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
   user-select: none;
 }
 
 .filter-chip:hover {
-  background-color: rgba(99, 135, 168, 0.08) !important;
-  border-color: rgba(99, 135, 168, 0.5);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: transparent !important;
+  border-color: var(--highlight-color);
+  color: var(--highlight-color) !important;
 }
 
 .filter-chip.active {
-  background-color: var(--text-color) !important;
+  background-color: var(--highlight-color) !important;
   color: white !important;
-  border-color: var(--text-color);
-  box-shadow: 0 2px 8px rgba(63, 92, 114, 0.3);
+  border-color: var(--highlight-color);
 }
 
 .filter-chip.active:hover {
-  background-color: #325066 !important;
-  border-color: #325066;
+  background-color: var(--highlight-color) !important;
+  color: white !important;
 }
 
 .filter-checkbox {
@@ -577,7 +574,7 @@ html, body {
 /* Mobile responsive adjustments */
 @media only screen and (max-width: 768px) {
   .event-filter {
-    padding: 0.75rem;
+    padding: 0;
     margin: 0.75rem 0;
   }
 

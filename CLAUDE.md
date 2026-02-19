@@ -19,26 +19,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 ```bash
-# Install dependencies (uses yarn, not npm)
-yarn install
+# Install dependencies
+npm install
 
 # Development server with Turbopack
-yarn dev
+npm run dev
 
 # Type checking (no auto-fix)
-yarn typecheck
+npm run typecheck
 
 # Linting
-yarn lint
+npm run lint
 
 # Production build
-yarn build
+npm run build
 
 # Start production server
-yarn start
+npm run start
 ```
 
-**Important**: This project uses **yarn**, not npm. Always use yarn commands.
+**Important**: This project uses **npm** commands.
 
 ## Branding & Favicon
 

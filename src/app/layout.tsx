@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_ORIGIN || "https://life-in-weeks-yzy.vercel.app"),
   title: "Life in Weeks",
   description: "A visual map of my life, where each week I've been alive is a little box.",
   icons: {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description: "A visual map of my life, where each week I've been alive is a little box.",
     images: [
       {
-        url: "/screencapture-localhost-3001-2025-06-15-20_26_45.png",
+        url: "/globe.svg",
         width: 1200,
         height: 630,
         alt: "Life in Weeks - Visual timeline of Yizhou Yu's life",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Life in Weeks",
     description: "A visual map of my life, where each week I've been alive is a little box.",
-    images: ["/screencapture-localhost-3001-2025-06-15-20_26_45.png"],
+    images: ["/globe.svg"],
   },
 };
 

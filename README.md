@@ -30,13 +30,13 @@ For a more user-friendly app version, check out [lifeweeks.app](https://lifeweek
 
 ## Getting Started
 
-**Important**: This project uses **yarn**, not npm.
+**Important**: This project uses **npm** commands.
 
 ```bash
 git clone <your-repo-url>
 cd life-in-weeks-nextjs
-yarn install
-yarn dev
+npm install
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the app.
@@ -44,10 +44,10 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 ### Additional Commands
 
 ```bash
-yarn typecheck  # Type checking (no auto-fix)
-yarn lint       # Run ESLint
-yarn build      # Production build
-yarn start      # Start production server
+npm run typecheck  # Type checking (no auto-fix)
+npm run lint       # Run ESLint
+npm run build      # Production build
+npm run start      # Start production server
 ```
 
 ## Configuration
@@ -81,6 +81,11 @@ export const APP_CONFIG = {
   defaultCompactMode: false,           // Start in compact view
   showPersonalEventDates: false,       // false = month/year only, true = full dates
 }
+```
+
+3. **Optional (recommended for social previews):**
+```bash
+NEXT_PUBLIC_SITE_ORIGIN=https://yizhouyu.dev
 ```
 
 ### Vercel/Production Deployment
