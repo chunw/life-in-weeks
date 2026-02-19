@@ -62,17 +62,17 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
-    //  "2017-09-15": [
-    //   {
-    //     headline: "Started school at Stanford University",
-    //     description: "",
-    //     category: "personal"
-    //   }
-    // ],
+     "2017-09-15": [
+      {
+        headline: "Started school at Stanford University",
+        description: "",
+        category: "personal"
+      }
+    ],
     "2026-02-02": [
       {
         headline: "Exhibition @United Nations Headquarters in New York",
-        description: "Honored to be invited to exhibit my work at the United Nations Headquarters in New York. ",
+        description: "Honored to be invited to exhibit my work at the United Nations Headquarters in New York, as part of the Global Auspicious Zodiac Competition Exhibition. ",
         category: "personal"
       }
     ],
