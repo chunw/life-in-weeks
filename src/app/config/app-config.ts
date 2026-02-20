@@ -54,7 +54,7 @@ export const APP_CONFIG: AppConfig = {
   defaultCompactMode: false,        // Start with standard view, user can toggle
 
   // Privacy Settings
-  showPersonalEventDates: false,    // Hide specific dates for personal events (month/year only)
+  showPersonalEventDates: true,     // Show full dates for personal events
 
   // Life Expectancy Settings
   showLifeExpectancy: false,         // Show life expectancy marker for perspective
