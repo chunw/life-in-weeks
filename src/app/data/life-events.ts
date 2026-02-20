@@ -82,6 +82,13 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         description: "Excited to have my work displayed at Time Square in New York as part of the Fun In Progress group show curated by HMVC Gallery New York. ",
         category: "personal"
       }
+    ], 
+    "2026-02-18": [
+      {
+        headline: "First order from Chun Wang Studio Shop",
+        description: "Thrilled to receive the first order from my Chun Wang Studio Shop at chunwangshop.com! Grateful for the support and excited to share my work with the world.",
+        category: "personal"
+      }
     ],
     ...(APP_CONFIG.showLifeExpectancy ? {
       [derivedConfig.lifeExpectancyDate]: [
