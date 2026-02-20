@@ -181,28 +181,38 @@ export function CustomTooltip({ content, children }: CustomTooltipProps) {
   // Format content with clickable links
   const formatContent = (text: string) => {
     const urlRegex = /(https?:\/\/[^\s]+)/g
-    const parts = text.split(urlRegex)
-    
-    return parts.map((part, index) => {
-      if (part.match(urlRegex)) {
-        return (
-          <a 
-            key={index} 
-            href={part} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ 
-              color: '#60a5fa', 
-              textDecoration: 'underline',
-              cursor: 'pointer'
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {part}
-          </a>
-        )
-      }
-      return <span key={index}>{part}</span>
+    const lines = text.split('\n')
+
+    return lines.map((line, lineIndex) => {
+      const parts = line.split(urlRegex)
+
+      return (
+        <React.Fragment key={`line-${lineIndex}`}>
+          {parts.map((part, partIndex) => {
+            if (part.match(urlRegex)) {
+              return (
+                <a
+                  key={`link-${lineIndex}-${partIndex}`}
+                  href={part}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: '#60a5fa',
+                    textDecoration: 'underline',
+                    cursor: 'pointer'
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {part}
+                </a>
+              )
+            }
+
+            return <span key={`text-${lineIndex}-${partIndex}`}>{part}</span>
+          })}
+          {lineIndex < lines.length - 1 && <br />}
+        </React.Fragment>
+      )
     })
   }
 
