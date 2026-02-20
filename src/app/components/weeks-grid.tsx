@@ -9,7 +9,7 @@ import { worldEvents } from '../data/world-events'
 import { usPresidents } from '../data/us-presidents'
 import { APP_CONFIG } from '../config/app-config'
 import { EventFilters } from './event-filter'
-import { formatDateString, formatTooltipDate, getAge, getWeekStartSunday } from '../utils/date-processing'
+import { formatDateString, getAge, getWeekStartSunday } from '../utils/date-processing'
 import {
   GridBox,
   processBoxesIntoRows,
@@ -255,73 +255,34 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
         return a.event.headline.localeCompare(b.event.headline)
       })
 
-      const eventsForWeek = weekEventsWithDate.map(({ event }) => event)
+      const visibleWeekEvents = isCompactMode
+        ? weekEventsWithDate.filter(({ event }) => shouldShowInCompact(event.headline))
+        : weekEventsWithDate
 
-      if (eventsForWeek && eventsForWeek.length > 0) {
-        // Pick the most important event (milestone first, then first event)
-        const primaryEventEntry = weekEventsWithDate.find(({ event }) => event.eventType === 'personal' && event.milestone) || weekEventsWithDate[0]
-        const primaryEvent = primaryEventEntry.event
-        const actualEventDate = primaryEventEntry.date
-
-        // In compact mode, check if we should show this event
-        if (isCompactMode && !shouldShowInCompact(primaryEvent.headline)) {
-          // Skip this event in compact mode, treat as empty week
-          const weekBox: GridBox = {
-            type: 'week',
-            label: '',
-            date: weekDateStr,
-            tooltip: createTooltip(weekDateStr, undefined),
-            borderClass: 'btn',
-            backgroundClass: 'custom-color',
-            age: weekAge,
-            year
-          }
-          allBoxes.push(weekBox)
-        } else {
-          const multipleEvents = weekEventsWithDate.length > 1
-
-          // Create detailed tooltip content for multi-event weeks
-          const allEventDescriptions = multipleEvents
-            ? weekEventsWithDate.map(({ event, date }) => {
-                const prefix = event.eventType === 'world' ? '🌍 ' :
-                              event.eventType === 'president' ? '🇺🇸 ' : ''
-                const showFullDate = event.eventType !== 'personal' || APP_CONFIG.showPersonalEventDates
-                const formattedEventDate = formatTooltipDate(date, showFullDate)
-                const eventDetails = event.description
-                  ? `${event.headline}: ${event.description}`
-                  : event.headline
-
-                return `${prefix}${formattedEventDate} – ${eventDetails}`
-              }).join('\n')
-            : (primaryEvent.description ? primaryEvent.description : undefined)
-
-          const baseEventLabel = isCompactMode ? createCompactEventLabel(primaryEvent.headline) : primaryEvent.headline
-          const eventLabel = !isCompactMode && multipleEvents
-            ? `${baseEventLabel} (+${weekEventsWithDate.length - 1})`
-            : baseEventLabel
+      if (visibleWeekEvents.length > 0) {
+        visibleWeekEvents.forEach(({ event, date }) => {
+          const eventLabel = isCompactMode ? createCompactEventLabel(event.headline) : event.headline
 
           const eventBox: GridBox = {
             type: 'event',
             label: eventLabel,
             date: weekDateStr,
-            tooltip: multipleEvents && allEventDescriptions
-              ? allEventDescriptions
-              : createTooltip(
-                  weekDateStr,
-                  allEventDescriptions,
-                  actualEventDate,
-                  primaryEvent.eventType,
-                  APP_CONFIG.showPersonalEventDates
-                ),
+            tooltip: createTooltip(
+              weekDateStr,
+              event.description,
+              date,
+              event.eventType,
+              APP_CONFIG.showPersonalEventDates
+            ),
             borderClass: 'btn',
             backgroundClass: 'custom-color', // We'll apply inline styles
             age: weekAge,
             year,
-            eventType: primaryEvent.eventType // Use primary event type for styling
+            eventType: event.eventType
           }
 
           allBoxes.push(eventBox)
-        }
+        })
       } else {
         // Empty week box
         const weekBox: GridBox = {
