@@ -9,7 +9,7 @@ import { worldEvents } from '../data/world-events'
 import { usPresidents } from '../data/us-presidents'
 import { APP_CONFIG } from '../config/app-config'
 import { EventFilters } from './event-filter'
-import { formatDateString, getAge, getWeekStartSunday } from '../utils/date-processing'
+import { formatDateString, formatTooltipDate, getAge, getWeekStartSunday } from '../utils/date-processing'
 import {
   GridBox,
   processBoxesIntoRows,
@@ -209,11 +209,10 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
 
       // Date formatting now working correctly
 
-      // Check if this week has any events on the week start date
-      let eventsForWeek = mergedEvents[weekDateStr]
-      let actualEventDate = weekDateStr // Default to week start
+      // Collect all events within this week (week start + following 6 days)
+      const weekEventsWithDate: Array<{ event: MergedEvent; date: string }> = []
 
-      // Also check each day within this week for events (like Gina's implementation)
+      // Check each day within this week for events
       for (let day = 0; day < 7; day++) {
         const dayDate = new Date(weekDate)
         dayDate.setDate(dayDate.getDate() + day)
@@ -226,22 +225,43 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
         const eventsForDay = mergedEvents[dayDateStr]
 
         if (eventsForDay && eventsForDay.length > 0) {
+          eventsForDay.forEach(event => {
+            weekEventsWithDate.push({ event, date: dayDateStr })
+          })
+
           // Add milestone weeks based on week start dates
           const milestoneEvents = eventsForDay.filter(e => e.eventType === 'personal' && e.milestone)
           if (milestoneEvents.length > 0) {
             // Add the week start date to milestone weeks since that's what the box.date will be
             milestoneWeeks.add(weekDateStr)
           }
-          // Use the day's events instead of week events
-          eventsForWeek = eventsForDay
-          actualEventDate = dayDateStr // Store the actual event date
-          break // Use first day with events in this week
         }
       }
 
+      weekEventsWithDate.sort((a, b) => {
+        if (a.date !== b.date) {
+          return a.date.localeCompare(b.date)
+        }
+
+        const eventTypePriority: Record<MergedEvent['eventType'], number> = {
+          personal: 0,
+          world: 1,
+          president: 2
+        }
+
+        const typeDiff = eventTypePriority[a.event.eventType] - eventTypePriority[b.event.eventType]
+        if (typeDiff !== 0) return typeDiff
+
+        return a.event.headline.localeCompare(b.event.headline)
+      })
+
+      const eventsForWeek = weekEventsWithDate.map(({ event }) => event)
+
       if (eventsForWeek && eventsForWeek.length > 0) {
         // Pick the most important event (milestone first, then first event)
-        const primaryEvent = eventsForWeek.find(e => e.eventType === 'personal' && e.milestone) || eventsForWeek[0]
+        const primaryEventEntry = weekEventsWithDate.find(({ event }) => event.eventType === 'personal' && event.milestone) || weekEventsWithDate[0]
+        const primaryEvent = primaryEventEntry.event
+        const actualEventDate = primaryEventEntry.date
 
         // In compact mode, check if we should show this event
         if (isCompactMode && !shouldShowInCompact(primaryEvent.headline)) {
@@ -258,30 +278,41 @@ export const WeeksGrid = forwardRef<HTMLDivElement, WeeksGridProps>(
           }
           allBoxes.push(weekBox)
         } else {
-          // Create tooltip only if there are events with descriptions
-          const eventsWithDescriptions = eventsForWeek.filter(e => e.description)
-          const allEventDescriptions = eventsWithDescriptions.length > 0
-            ? eventsWithDescriptions.map(e => {
-                // Add emoji prefix for world/president events to distinguish them
-                const prefix = e.eventType === 'world' ? '🌍 ' :
-                              e.eventType === 'president' ? '🇺🇸 ' : ''
-                return prefix + e.description
-              }).join('\n')
-            : undefined
+          const multipleEvents = weekEventsWithDate.length > 1
 
-          const eventLabel = isCompactMode ? createCompactEventLabel(primaryEvent.headline) : primaryEvent.headline
+          // Create detailed tooltip content for multi-event weeks
+          const allEventDescriptions = multipleEvents
+            ? weekEventsWithDate.map(({ event, date }) => {
+                const prefix = event.eventType === 'world' ? '🌍 ' :
+                              event.eventType === 'president' ? '🇺🇸 ' : ''
+                const showFullDate = event.eventType !== 'personal' || APP_CONFIG.showPersonalEventDates
+                const formattedEventDate = formatTooltipDate(date, showFullDate)
+                const eventDetails = event.description
+                  ? `${event.headline}: ${event.description}`
+                  : event.headline
+
+                return `${prefix}${formattedEventDate} – ${eventDetails}`
+              }).join('\n')
+            : (primaryEvent.description ? primaryEvent.description : undefined)
+
+          const baseEventLabel = isCompactMode ? createCompactEventLabel(primaryEvent.headline) : primaryEvent.headline
+          const eventLabel = !isCompactMode && multipleEvents
+            ? `${baseEventLabel} (+${weekEventsWithDate.length - 1})`
+            : baseEventLabel
 
           const eventBox: GridBox = {
             type: 'event',
             label: eventLabel,
             date: weekDateStr,
-            tooltip: createTooltip(
-              weekDateStr,
-              allEventDescriptions,
-              actualEventDate,
-              primaryEvent.eventType,
-              APP_CONFIG.showPersonalEventDates
-            ),
+            tooltip: multipleEvents && allEventDescriptions
+              ? allEventDescriptions
+              : createTooltip(
+                  weekDateStr,
+                  allEventDescriptions,
+                  actualEventDate,
+                  primaryEvent.eventType,
+                  APP_CONFIG.showPersonalEventDates
+                ),
             borderClass: 'btn',
             backgroundClass: 'custom-color', // We'll apply inline styles
             age: weekAge,
