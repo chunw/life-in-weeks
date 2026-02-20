@@ -65,7 +65,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
      "2017-09-15": [
       {
         headline: "Started school at Stanford University",
-        description: "",
+        description: "Majored in Computer Science, with a focus on Human-Computer Interaction and Artificial Intelligence.",
         category: "personal"
       }
     ],
