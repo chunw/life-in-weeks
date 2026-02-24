@@ -69,6 +69,13 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
+     "2009-05-30": [
+      {
+        headline: "Graduated from Beijing No.4 High School",
+        description: "Graduated from 北京四中",
+        category: "personal"
+      }
+    ],
      "2019-06-25": [
       {
         headline: "Graduated from Stanford University",
