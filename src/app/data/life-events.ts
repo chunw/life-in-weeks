@@ -62,13 +62,6 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
-     "2014-05-27": [
-      {
-        headline: "Graduated from University of Virginia",
-        description: "Graduated with Highest Distinction from University of Virginia with B.S. degree in Computer Science and minor in Applied Math.",
-        category: "personal"
-      }
-    ],
      "2009-05-30": [
       {
         headline: "Graduated from Beijing No.4 High School",
@@ -76,6 +69,21 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
+     "2010-04-30": [
+      {
+        headline: "Immigrated to the United States",
+        description: "Moved to the United States with family, marking a major life transition.",
+        category: "personal"
+      }
+    ],
+     "2014-05-27": [
+      {
+        headline: "Graduated from University of Virginia",
+        description: "Graduated with Highest Distinction from University of Virginia with B.S. degree in Computer Science and minor in Applied Math.",
+        category: "personal"
+      }
+    ],
+    
      "2019-06-25": [
       {
         headline: "Graduated from Stanford University",
@@ -83,16 +91,30 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
+     "2021-05-01": [
+      {
+        headline: "Won official nomination for the 2021 Webby Awards",
+        description: "Honored to receive an official nomination for the 2021 Webby Awards in the category of Best Cultural Website/Blog for my 'IMMEMORY: On COVID' project, which curates creative responses to the COVID-19 pandemic. ",
+        category: "personal"
+      }
+    ],
+    "2025-11-01": [
+      {
+        headline: "The Wrong Biennale 2025-2026 Grand Opening",
+        description: "Conceptualized, curated and developed Negotiated Intelligence, an official Pavilion of The Wrong Biennale 2025-2026 exploring the complex relationship between human creators and AI through a series of documentary work around AI-Human co-creation.",
+        category: "personal"
+      }
+    ],
     "2026-02-02": [
       {
-        headline: "Exhibition @United Nations Headquarters in New York",
+        headline: "Art exhibition @United Nations Headquarters in New York",
         description: "Honored to be invited to exhibit my work at the United Nations Headquarters in New York, as part of the Global Auspicious Zodiac Competition Exhibition. ",
         category: "personal"
       }
     ],
      "2026-02-15": [
       {
-        headline: "Exhibition @Time Square, New York",
+        headline: "Art exhibition @Time Square, New York",
         description: "Excited to have my work displayed at Time Square in New York as part of the Fun In Progress group show curated by HMVC Gallery New York. ",
         category: "personal"
       }
