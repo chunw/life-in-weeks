@@ -62,9 +62,16 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
-     "2017-09-15": [
+     "2014-05-27": [
       {
-        headline: "Started school at Stanford University",
+        headline: "Graduated with Highest Distinctionfrom University of Virginia with B.S. degree in Computer Science",
+        description: "Majored in Computer Science, minored in Applied Math.",
+        category: "personal"
+      }
+    ],
+     "2019-06-25": [
+      {
+        headline: "Graduated from Stanford University with M.S. degree in Computer Science",
         description: "Majored in Computer Science, with a focus on Human-Computer Interaction and Artificial Intelligence.",
         category: "personal"
       }
