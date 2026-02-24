@@ -21,13 +21,8 @@ interface LifeWeeksClientProps {
  * Handles interactive state like compact mode toggle and event filters
  */
 export function LifeWeeksClient({ lifeEvents, weeksConfig, derivedConfig }: LifeWeeksClientProps) {
-  // Default to compact mode on mobile, standard on desktop
-  const [isCompactMode, setIsCompactMode] = useState(() => {
-    if (typeof window === 'undefined') {
-      return APP_CONFIG.defaultCompactMode // Server-side fallback
-    }
-    return window.innerWidth <= 768 // Mobile/tablet uses compact mode
-  })
+  // Start with configured default view across all devices
+  const [isCompactMode, setIsCompactMode] = useState(APP_CONFIG.defaultCompactMode)
 
   // Event filter state
   const [filters, setFilters] = useState<EventFilters>({
@@ -58,10 +53,6 @@ export function LifeWeeksClient({ lifeEvents, weeksConfig, derivedConfig }: Life
             filters={filters}
             setFilters={setFilters}
           />
-          <CompactToggle
-            isCompact={isCompactMode}
-            onToggle={setIsCompactMode}
-          />
         </div>
         <WeeksGrid
           ref={gridRef}
@@ -71,6 +62,12 @@ export function LifeWeeksClient({ lifeEvents, weeksConfig, derivedConfig }: Life
           filters={filters}
         />
         <Footer />
+        <div className="bottom-compact-toggle">
+          <CompactToggle
+            isCompact={isCompactMode}
+            onToggle={setIsCompactMode}
+          />
+        </div>
       </div>
     </div>
   )
