@@ -107,7 +107,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
     "2025-11-01": [
       {
-        headline: "The Wrong Biennale 2025-2026 Grand Opening",
+        headline: "The Wrong Biennale 2025-2026 worldwide Grand Opening",
         description: "Conceptualized, curated and developed Negotiated Intelligence, an official Pavilion of The Wrong Biennale 2025-2026 exploring the complex relationship between human creators and AI through a series of documentary work around AI-Human co-creation.",
         category: "personal"
       }
