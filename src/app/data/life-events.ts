@@ -126,14 +126,14 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ], 
-    "2026-02-18": [
-      {
+    // "2026-02-18": [
+    //   {
         
-        headline: "First Tote bag order from Chun Wang Studio Shop",
-        description: "Thrilled to receive the first order of Remains tote bags from my Chun Wang Studio Shop at chunwangshop.com! Grateful for the support and excited to share my work with the world.",
-        category: "personal"
-      }
-    ],
+    //     headline: "First Tote bag order from Chun Wang Studio Shop",
+    //     description: "Thrilled to receive the first order of Remains tote bags from my Chun Wang Studio Shop at chunwangshop.com! Grateful for the support and excited to share my work with the world.",
+    //     category: "personal"
+    //   }
+    // ],
     ...(APP_CONFIG.showLifeExpectancy ? {
       [derivedConfig.lifeExpectancyDate]: [
         {
