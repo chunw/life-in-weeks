@@ -98,6 +98,13 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
+    "2022-10-12": [
+      {
+        headline: "Art exhibition at CAVE @ Harvard University",
+        description: "CAMLab flagship exhibition at CAVE @ Harvard University, showcasing my work for Cave Dance, a long-term collaborative project exploring the intersection of art and technology.",
+        category: "personal"
+      }
+    ],
     "2025-11-01": [
       {
         headline: "The Wrong Biennale 2025-2026 Grand Opening",
