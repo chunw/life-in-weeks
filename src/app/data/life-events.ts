@@ -99,7 +99,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
      "2022-03-12": [
       {
-        headline: "🏆 Published 2021 Passepartout Photo Prize CATALOGUE",
+        headline: "📚 Published 2021 Passepartout Photo Prize CATALOGUE",
         description: "A shot from the series El Otro, El Mismo was published as the winner of the CATALOGUE PRIZE in the Passepartout Photo Prize. ISBN: 978-88-942678-9-1",
         category: "personal"
       }
@@ -113,7 +113,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
     "2025-03-30": [
       {
-        headline: "📖 Published in 5x7 Photobook Vol.1 by Artsin Square",
+        headline: "📚 Published in 5x7 Photobook Vol.1 by Artsin Square",
         description: "Photography work 'Hours, Minutes' (from series El Otro, El Mismo) published in 5x7 Photobook Vol.1 by Artsin Square. ISBN: 978-1-0694811-0-8",
         category: "personal"
       }
