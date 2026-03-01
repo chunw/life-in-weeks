@@ -83,7 +83,6 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
-    
      "2019-06-25": [
       {
         headline: "Graduated from Stanford University",
@@ -93,8 +92,15 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
      "2021-05-01": [
       {
-        headline: "Won Official Nomination for 2021 Webby Awards",
+        headline: "🏆 Official Nomination for 2021 Webby Awards",
         description: "Honored to receive an official nomination (only the top 5 in each category is awarded with this recognition, selected from 16000+ submitted work) for the 2021 Webby Awards in the category of Best Cultural Website/Blog for my 'IMMEMORY: On COVID' project, which curates creative responses to the COVID-19 pandemic. ",
+        category: "personal"
+      }
+    ],
+     "2022-03-12": [
+      {
+        headline: "🏆 Published 2021 Passepartout Photo Prize CATALOGUE",
+        description: "A shot from the series El Otro, El Mismo was published as the winner of the CATALOGUE PRIZE in the Passepartout Photo Prize. ISBN: 978-88-942678-9-1",
         category: "personal"
       }
     ],
@@ -102,6 +108,13 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
       {
         headline: "CAVE Grand Opening + Art exhibition at Harvard University",
         description: "CAMLab flagship exhibition at CAVE @ Harvard University opened to public, showcasing my work for Cave Dance, a long-term collaborative project exploring the intersection of art and technology.",
+        category: "personal"
+      }
+    ],
+    "2025-03-30": [
+      {
+        headline: "📖 Published in 5x7 Photobook Vol.1 by Artsin Square",
+        description: "Photography work 'Hours, Minutes' (from series El Otro, El Mismo) published in 5x7 Photobook Vol.1 by Artsin Square. ISBN: 978-1-0694811-0-8",
         category: "personal"
       }
     ],
