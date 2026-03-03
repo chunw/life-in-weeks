@@ -99,7 +99,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
      "2022-03-12": [
       {
-        headline: "📚 Published 2021 Passepartout Photo Prize CATALOGUE",
+        headline: "📚 Published in 2021 Passepartout Photo Prize Catalogue",
         description: "A shot from the series El Otro, El Mismo was published as the winner of the CATALOGUE PRIZE in the Passepartout Photo Prize. ISBN: 978-88-942678-9-1",
         category: "personal"
       }
