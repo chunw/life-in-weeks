@@ -83,6 +83,41 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
+     "2017-12-08": [
+      {
+        headline: "Art exhibition at Stanford Art Gallery",
+        description: "Art Department’s open studio & exhibition with my work Augmented Ping Pong",
+        category: "personal"
+      }
+    ],
+    "2018-05-06": [
+      {
+        headline: "Art exhibition at SFMOMA,  San Francisco, CA",
+        description: "Exhibition of my work art.empath.io",
+        category: "personal"
+      }
+    ],
+    "2018-05-11": [
+      {
+        headline: "Art exhibition at Anderson Collection at Stanford University",
+        description: "Exhibition of my work art.empath.io",
+        category: "personal"
+      }
+    ],
+     "2018-05-25": [
+      {
+        headline: "Art exhibition at Stanford Art Gallery",
+        description: "Stanford Arts Departmental Show. Exhibited work: FeedScanner. Stanford Art Gallery, Stanford, California.",
+        category: "personal"
+      }
+    ],
+     "2019-01-06": [
+      {
+        headline: "Art exhibition at Stanford Art Gallery",
+        description: "Stanford Arts Experimental Media Lab Exhibition. Exhibited work: One Day (Video); Bad Blood (Video Installation), Stanford Art Gallery, Stanford, California",
+        category: "personal"
+      }
+    ],
      "2019-06-25": [
       {
         headline: "🎓 Graduated from Stanford University",
@@ -90,6 +125,7 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ],
+    
      "2021-05-01": [
       {
         headline: "🏆 Official Nomination for 2021 Webby Awards",
@@ -106,8 +142,8 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
     "2022-10-12": [
       {
-        headline: "CAVE Grand Opening + Art exhibition at Harvard University",
-        description: "CAMLab flagship exhibition at CAVE @ Harvard University opened to public, showcasing my work for Cave Dance, a long-term collaborative project exploring the intersection of art and technology.",
+        headline: "Art exhibition at Harvard University",
+        description: "CAMLab flagship exhibition at CAVE @ Harvard University opened to public, showcasing my work for Cave Dance, a long-term collaborative project exploring the intersection of art and technology. This date also marks the Grand Opening for CAVE, a new experimental art space at Harvard dedicated to CAMLab projects.",
         category: "personal"
       }
     ],
