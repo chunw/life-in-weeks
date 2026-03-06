@@ -85,8 +85,8 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
     ],
      "2016-01-31": [
       {
-        headline: "Art published by SFMOMA (San Francisco Museum of Modern Art)",
-        description: "Between 2016 and 2019, a total of 7 pieces of my original artwork [were curated by San Francisco Museum of Modern Art (SFMOMA)](https://sfmoma.tumblr.com/) and featured in their Submission Friday initiative. ",
+        headline: "Art published by SFMOMA/San Francisco Museum of Modern Art",
+        description: "Between 2016 and 2019, a total of 7 pieces of my original artwork were curated by San Francisco Museum of Modern Art (SFMOMA) and featured in their Submission Friday initiative.",
         category: "personal"
       }
     ],
