@@ -183,6 +183,13 @@ export function createLifeEvents(sensitiveDates: SensitiveDates, derivedConfig: 
         category: "personal"
       }
     ], 
+     "2026-04-04": [
+      {
+        headline: "Released first guitar duo performance video `Milonga`",
+        description: "Debut from Chun & Yuguan Duo!",
+        category: "personal"
+      }
+    ], 
     // "2026-02-18": [
     //   {
         
